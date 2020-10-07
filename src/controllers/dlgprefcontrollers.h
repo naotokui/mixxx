@@ -24,11 +24,17 @@ class DlgPrefControllers : public DlgPreferencePage, public Ui::DlgPrefControlle
     virtual ~DlgPrefControllers();
 
     bool handleTreeItemClick(QTreeWidgetItem* clickedItem);
+    QUrl helpUrl() const override;
 
   public slots:
-    void slotUpdate();
-    void slotApply();
-    void slotCancel();
+    /// Called when the preference dialog (not this page) is shown to the user.
+    void slotUpdate() override;
+    /// Called when the user clicks the global "Apply" button.
+    void slotApply() override;
+    /// Called when the user clicks the global "Cancel" button.
+    void slotCancel() override;
+    /// Called when the user clicks the global "Reset to Defaults" button.
+    void slotResetToDefaults() override;
 
   private slots:
     void rescanControllers();

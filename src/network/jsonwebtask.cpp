@@ -6,7 +6,6 @@
 #include <QMetaMethod>
 #include <QMimeDatabase>
 #include <QNetworkRequest>
-#include <QThread>
 #include <QTimerEvent>
 #include <mutex> // std::once_flag
 
@@ -16,6 +15,7 @@
 #endif
 #include "util/counter.h"
 #include "util/logger.h"
+#include "util/thread_affinity.h"
 
 namespace mixxx {
 
@@ -62,12 +62,37 @@ bool readJsonContent(
     DEBUG_ASSERT(jsonContent);
     DEBUG_ASSERT(JSON_MIME_TYPE.isValid());
     const auto contentType = readContentType(reply);
-    if (contentType == JSON_MIME_TYPE) {
-        *jsonContent = QJsonDocument::fromJson(reply->readAll());
-        return true;
-    } else {
+    if (contentType != JSON_MIME_TYPE) {
+        kLogger.warning()
+                << "Unexpected content type"
+                << contentType;
         return false;
     }
+    QByteArray jsonData = reply->readAll();
+    if (jsonData.isEmpty()) {
+        kLogger.warning()
+                << "Empty reply";
+        return false;
+    }
+    QJsonParseError parseError;
+    const auto jsonDoc = QJsonDocument::fromJson(
+            jsonData,
+            &parseError);
+    // QJsonDocument::fromJson() returns a non-null document
+    // if parsing succeeds and otherwise null on error. The
+    // parse error must only be evaluated if the returned
+    // document is null!
+    if (jsonDoc.isNull() &&
+            parseError.error != QJsonParseError::NoError) {
+        kLogger.warning()
+                << "Failed to parse JSON data:"
+                << parseError.errorString()
+                << "at offset"
+                << parseError.offset;
+        return false;
+    }
+    *jsonContent = jsonDoc;
+    return true;
 }
 
 // TODO: Allow to customize headers and attributes?
@@ -215,7 +240,7 @@ bool JsonWebTask::doStart(
         QNetworkAccessManager* networkAccessManager,
         int parentTimeoutMillis) {
     Q_UNUSED(parentTimeoutMillis);
-    DEBUG_ASSERT(thread() == QThread::currentThread());
+    DEBUG_ASSERT_QOBJECT_THREAD_AFFINITY(this);
     DEBUG_ASSERT(networkAccessManager);
     VERIFY_OR_DEBUG_ASSERT(!m_pendingNetworkReply) {
         kLogger.warning()
@@ -249,8 +274,8 @@ bool JsonWebTask::doStart(
             Qt::UniqueConnection);
 
     connect(m_pendingNetworkReply,
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-            qOverload<QNetworkReply::NetworkError>(&QNetworkReply::error),
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+            &QNetworkReply::errorOccurred,
 #else
             QOverload<QNetworkReply::NetworkError>::of(&QNetworkReply::error),
 #endif
@@ -262,7 +287,7 @@ bool JsonWebTask::doStart(
 }
 
 QUrl JsonWebTask::doAbort() {
-    DEBUG_ASSERT(thread() == QThread::currentThread());
+    DEBUG_ASSERT_QOBJECT_THREAD_AFFINITY(this);
     QUrl requestUrl;
     if (m_pendingNetworkReply) {
         requestUrl = abortPendingNetworkReply(m_pendingNetworkReply);
@@ -276,7 +301,7 @@ QUrl JsonWebTask::doAbort() {
 }
 
 QUrl JsonWebTask::doTimeOut() {
-    DEBUG_ASSERT(thread() == QThread::currentThread());
+    DEBUG_ASSERT_QOBJECT_THREAD_AFFINITY(this);
     QUrl requestUrl;
     if (m_pendingNetworkReply) {
         requestUrl = timeOutPendingNetworkReply(m_pendingNetworkReply);
@@ -288,7 +313,7 @@ QUrl JsonWebTask::doTimeOut() {
 }
 
 void JsonWebTask::slotNetworkReplyFinished() {
-    DEBUG_ASSERT(thread() == QThread::currentThread());
+    DEBUG_ASSERT_QOBJECT_THREAD_AFFINITY(this);
     const QPair<QNetworkReply*, HttpStatusCode> networkReplyWithStatusCode =
             receiveNetworkReply();
     auto* const networkReply = networkReplyWithStatusCode.first;

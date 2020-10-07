@@ -1,8 +1,12 @@
 #include <gtest/gtest.h>
+
 #include <QtDebug>
 
 #include "track/beatgrid.h"
+#include "track/track.h"
 #include "util/memory.h"
+
+using namespace mixxx;
 
 namespace {
 

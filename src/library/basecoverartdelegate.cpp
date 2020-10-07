@@ -1,11 +1,11 @@
-#include "library/coverartdelegate.h"
-
 #include <QPainter>
 #include <algorithm>
 
 #include "library/coverartcache.h"
+#include "library/coverartdelegate.h"
 #include "library/dao/trackschema.h"
 #include "library/trackmodel.h"
+#include "track/track.h"
 #include "util/logger.h"
 #include "widget/wlibrarytableview.h"
 
@@ -119,7 +119,7 @@ void BaseCoverArtDelegate::paintItem(
         QPixmap pixmap = m_pCache->tryLoadCover(
                 this,
                 coverInfo,
-                option.rect.width() * scaleFactor,
+                static_cast<int>(option.rect.width() * scaleFactor),
                 m_inhibitLazyLoading ? CoverArtCache::Loading::CachedOnly : CoverArtCache::Loading::Default);
         if (pixmap.isNull()) {
             // Cache miss
@@ -131,7 +131,7 @@ void BaseCoverArtDelegate::paintItem(
             } else {
                 // If we asked for a non-cache image and got a null pixmap,
                 // then our request was queued.
-                m_pendingCacheRows.insertMulti(coverInfo.hash, index.row());
+                m_pendingCacheRows.insert(coverInfo.hash, index.row());
             }
         } else {
             // Cache hit

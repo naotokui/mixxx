@@ -32,12 +32,14 @@ class DlgPrefController : public DlgPreferencePage {
     virtual ~DlgPrefController();
 
   public slots:
-    // Called when we should apply / save our changes.
-    void slotApply();
-    // Called when we should cancel the changes made.
-    void slotCancel();
-    // Called when preference dialog (not this dialog) is displayed.
-    void slotUpdate();
+    /// Called when the preference dialog (not this page) is shown to the user.
+    void slotUpdate() override;
+    /// Called when the user clicks the global "Apply" button.
+    void slotApply() override;
+    /// Called when the user clicks the global "Reset to Defaults" button.
+    void slotResetToDefaults() override;
+
+    QUrl helpUrl() const override;
 
   signals:
     void applyPreset(Controller* pController, ControllerPresetPointer pPreset, bool bEnabled);
@@ -70,6 +72,7 @@ class DlgPrefController : public DlgPreferencePage {
     QString presetAuthor(const ControllerPresetPointer pPreset) const;
     QString presetDescription(const ControllerPresetPointer pPreset) const;
     QString presetForumLink(const ControllerPresetPointer pPreset) const;
+    QString presetManualLink(const ControllerPresetPointer pPreset) const;
     QString presetWikiLink(const ControllerPresetPointer pPreset) const;
     QString presetScriptFileLinks(const ControllerPresetPointer pPreset) const;
     void applyPresetChanges();
@@ -78,7 +81,7 @@ class DlgPrefController : public DlgPreferencePage {
 
     /// Set dirty state (i.e. changes have been made).
     ///
-    /// When this preferences page is marked as "dirty", changes have occured
+    /// When this preferences page is marked as "dirty", changes have occurred
     /// that can be applied or discarded.
     ///
     /// @param bDirty The new dialog's dirty state.
@@ -88,7 +91,7 @@ class DlgPrefController : public DlgPreferencePage {
 
     /// Set dirty state (i.e. changes have been made).
     ///
-    /// When this preferences page is marked as "dirty", changes have occured
+    /// When this preferences page is marked as "dirty", changes have occurred
     /// that can be applied or discarded.
     ///
     /// @param bDirty The new dialog's dirty state.

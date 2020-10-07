@@ -1,28 +1,24 @@
-// setlogfeature.h
+#pragma once
 
-#ifndef SETLOGFEATURE_H
-#define SETLOGFEATURE_H
-
-#include <QLinkedList>
-#include <QSqlTableModel>
 #include <QAction>
 #include <QPointer>
+#include <QSqlTableModel>
 
 #include "library/baseplaylistfeature.h"
 #include "preferences/usersettings.h"
 
 class SetlogFeature : public BasePlaylistFeature {
     Q_OBJECT
-public:
+  public:
     SetlogFeature(Library* pLibrary,
-                  UserSettingsPointer pConfig);
+            UserSettingsPointer pConfig);
     virtual ~SetlogFeature();
 
     QVariant title() override;
     QIcon getIcon() override;
 
     void bindLibraryWidget(WLibrary* libraryWidget,
-                           KeyboardEventFilter* keyboard) override;
+            KeyboardEventFilter* keyboard) override;
     void bindSidebarWidget(WLibrarySidebar* pSidebarWidget) override;
 
   public slots:
@@ -34,7 +30,7 @@ public:
   protected:
     QList<BasePlaylistFeature::IdAndLabel> createPlaylistLabels() override;
     QString fetchPlaylistLabel(int playlistId) override;
-    void decorateChild(TreeItem *pChild, int playlistId) override;
+    void decorateChild(TreeItem* pChild, int playlistId) override;
 
   private slots:
     void slotPlayingTrackChanged(TrackPointer currentPlayingTrack);
@@ -43,9 +39,10 @@ public:
     void slotPlaylistTableRenamed(int playlistId, QString newName) override;
 
   private:
+    void reloadChildModel(int playlistId);
     QString getRootViewHtml() const override;
 
-    QLinkedList<TrackId> m_recentTracks;
+    std::list<TrackId> m_recentTracks;
     QAction* m_pJoinWithPreviousAction;
     QAction* m_pGetNewPlaylist;
     int m_playlistId;
@@ -53,5 +50,3 @@ public:
     QPointer<WLibrarySidebar> m_pSidebarWidget;
     const QIcon m_icon;
 };
-
-#endif // SETLOGFEATURE_H

@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 
 #include "engine/engine.h"
+#include "track/track.h"
 #include "util/color/color.h"
 
 WCueMenuPopup::WCueMenuPopup(UserSettingsPointer pConfig, QWidget* parent)
@@ -131,4 +132,9 @@ void WCueMenuPopup::slotDeleteCue() {
     }
     m_pTrack->removeCue(m_pCue);
     hide();
+}
+
+void WCueMenuPopup::closeEvent(QCloseEvent* event) {
+    emit aboutToHide();
+    QWidget::closeEvent(event);
 }

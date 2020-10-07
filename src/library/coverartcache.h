@@ -7,8 +7,8 @@
 #include <QtDebug>
 
 #include "library/coverart.h"
+#include "track/track_decl.h"
 #include "util/singleton.h"
-#include "track/track.h"
 
 class CoverArtCache : public QObject, public Singleton<CoverArtCache> {
     Q_OBJECT
@@ -65,7 +65,7 @@ class CoverArtCache : public QObject, public Singleton<CoverArtCache> {
         quint16 requestedHash;
         bool signalWhenDone;
 
-        CoverArt cover;
+        CoverArt coverArt;
         bool coverInfoUpdated;
     };
     // Load cover from path indicated in coverInfo. WARNING: This is run in a
@@ -107,7 +107,7 @@ class CoverArtCache : public QObject, public Singleton<CoverArtCache> {
             int desiredWidth,
             Loading loading);
 
-    QSet<QPair<const QObject*, quint16> > m_runningRequests;
+    QSet<QPair<const QObject*, quint16>> m_runningRequests;
 };
 
 inline

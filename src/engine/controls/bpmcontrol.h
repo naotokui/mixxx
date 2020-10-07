@@ -4,17 +4,21 @@
 #include <gtest/gtest_prod.h>
 
 #include "control/controlobject.h"
+#include "control/controlproxy.h"
 #include "engine/controls/enginecontrol.h"
 #include "engine/sync/syncable.h"
+#include "track/beats.h"
 #include "util/tapfilter.h"
 
 class ControlObject;
 class ControlLinPotmeter;
-class ControlProxy;
 class ControlPushButton;
 class EngineBuffer;
 class SyncControl;
 
+/// BpmControl is an EngineControl that manages the bpm and beat distance of
+/// tracks.  It understands the tempo of the underlying track and the musical
+/// position of the playhead.
 class BpmControl : public EngineControl {
     Q_OBJECT
 
@@ -36,12 +40,16 @@ class BpmControl : public EngineControl {
     double getNearestPositionInPhase(double dThisPosition, bool respectLoops, bool playing);
     double getBeatMatchPosition(double dThisPosition, bool respectLoops, bool playing);
     double getPhaseOffset(double dThisPosition);
+    /// getBeatDistance is adjusted to include the user offset so it's
+    /// transparent to other decks.
     double getBeatDistance(double dThisPosition) const;
 
     void setTargetBeatDistance(double beatDistance);
     void setInstantaneousBpm(double instantaneousBpm);
     void resetSyncAdjustment();
     double updateLocalBpm();
+    /// updateBeatDistance is adjusted to include the user offset so
+    /// it's transparent to other decks.
     double updateBeatDistance();
 
     void collectFeatures(GroupFeatureState* pGroupFeatures) const;
@@ -50,12 +58,12 @@ class BpmControl : public EngineControl {
     // next beat, the current beat length, and the beat ratio (how far dPosition
     // lies within the current beat). Returns false if a previous or next beat
     // does not exist. NULL arguments are safe and ignored.
-    static bool getBeatContext(const BeatsPointer& pBeats,
-                               const double dPosition,
-                               double* dpPrevBeat,
-                               double* dpNextBeat,
-                               double* dpBeatLength,
-                               double* dpBeatPercentage);
+    static bool getBeatContext(const mixxx::BeatsPointer& pBeats,
+            const double dPosition,
+            double* dpPrevBeat,
+            double* dpNextBeat,
+            double* dpBeatLength,
+            double* dpBeatPercentage);
 
     // Alternative version that works if the next and previous beat positions
     // are already known.
@@ -74,9 +82,9 @@ class BpmControl : public EngineControl {
     double getRateRatio() const;
     void notifySeek(double dNewPlaypos) override;
     void trackLoaded(TrackPointer pNewTrack) override;
+    void trackBeatsUpdated(mixxx::BeatsPointer pBeats) override;
 
   private slots:
-    void slotFileBpmChanged(double);
     void slotAdjustBeatsFaster(double);
     void slotAdjustBeatsSlower(double);
     void slotTranslateBeatsEarlier(double);
@@ -88,7 +96,6 @@ class BpmControl : public EngineControl {
     void slotBpmTap(double);
     void slotUpdateRateSlider(double v = 0.0);
     void slotUpdateEngineBpm(double v = 0.0);
-    void slotUpdatedTrackBeats();
     void slotBeatsTranslate(double);
     void slotBeatsTranslateMatchAlignment(double);
 
@@ -120,8 +127,6 @@ class BpmControl : public EngineControl {
     ControlProxy* m_pLoopStartPosition;
     ControlProxy* m_pLoopEndPosition;
 
-    // The current loaded file's detected BPM
-    ControlObject* m_pFileBpm;
     // The average bpm around the current playposition;
     ControlObject* m_pLocalBpm;
     ControlPushButton* m_pAdjustBeatsFaster;
@@ -157,13 +162,13 @@ class BpmControl : public EngineControl {
     // used in the engine thread only
     double m_dSyncInstantaneousBpm;
     double m_dLastSyncAdjustment;
+    bool m_dUserTweakingSync;
 
-    // objects below are written from an engine worker thread
-    TrackPointer m_pTrack;
-    BeatsPointer m_pBeats;
+    // m_pBeats is written from an engine worker thread
+    mixxx::BeatsPointer m_pBeats;
 
     FRIEND_TEST(EngineSyncTest, UserTweakBeatDistance);
+    FRIEND_TEST(EngineSyncTest, UserTweakPreservedInSeek);
 };
-
 
 #endif // BPMCONTROL_H

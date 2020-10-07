@@ -557,7 +557,7 @@ class SoundTouch(Dependence):
 
         if build.platform_is_linux or build.platform_is_bsd:
             # Try using system lib
-            if conf.CheckForPKG('soundtouch', '2.0.0'):
+            if conf.CheckForPKG('soundtouch', '2.1.1'):
                 # System Lib found
                 if not conf.CheckLib(['SoundTouch']):
                     raise Exception(
@@ -566,7 +566,9 @@ class SoundTouch(Dependence):
                 self.INTERNAL_LINK = False
 
         if self.INTERNAL_LINK:
-            env.Append(CPPPATH=['#' + self.SOUNDTOUCH_INTERNAL_PATH])
+            # The system includes all start with <soundtouch/...>, i.e.
+            # we must omit the "soundtouch" path component here!
+            env.Append(CPPPATH=['#/lib'])
 
             # Prevents circular import.
             from .features import Optimize
@@ -764,6 +766,7 @@ class MixxxCore(Feature):
                    "src/controllers/dlgprefcontrollers.cpp",
                    "src/dialog/dlgabout.cpp",
                    "src/dialog/dlgdevelopertools.cpp",
+                   "src/dialog/dlgreplacecuecolor.cpp",
 
                    "src/preferences/configobject.cpp",
                    "src/preferences/dialog/dlgprefautodj.cpp",
@@ -953,6 +956,7 @@ class MixxxCore(Feature):
                    "src/widget/wbasewidget.cpp",
                    "src/widget/wwidget.cpp",
                    "src/widget/wwidgetgroup.cpp",
+                   "src/widget/wtrackwidgetgroup.cpp",
                    "src/widget/wwidgetstack.cpp",
                    "src/widget/wsizeawarestack.cpp",
                    "src/widget/wlabel.cpp",
@@ -1023,6 +1027,7 @@ class MixxxCore(Feature):
                    "src/widget/wlibrarytableview.cpp",
                    "src/widget/wanalysislibrarytableview.cpp",
                    "src/widget/wlibrarytextbrowser.cpp",
+                   "src/widget/wtrackmenu.cpp",
 
                    "src/database/mixxxdb.cpp",
                    "src/database/schemamanager.cpp",
@@ -1044,6 +1049,9 @@ class MixxxCore(Feature):
                    "src/library/coverart.cpp",
                    "src/library/coverartcache.cpp",
                    "src/library/coverartutils.cpp",
+                   "src/library/trackcollectioniterator.cpp",
+                   "src/library/trackmodeliterator.cpp",
+                   "src/library/trackprocessing.cpp",
 
                    "src/library/crate/cratestorage.cpp",
                    "src/library/crate/cratefeature.cpp",
@@ -1057,6 +1065,7 @@ class MixxxCore(Feature):
                    "src/library/autodj/autodjprocessor.cpp",
                    "src/library/dao/directorydao.cpp",
                    "src/library/mixxxlibraryfeature.cpp",
+                   "src/library/basetracksetfeature.cpp",
                    "src/library/baseplaylistfeature.cpp",
                    "src/library/playlistfeature.cpp",
                    "src/library/setlogfeature.cpp",
@@ -1222,24 +1231,34 @@ class MixxxCore(Feature):
                    "src/track/bpm.cpp",
                    "src/track/cue.cpp",
                    "src/track/cueinfo.cpp",
+                   "src/track/cueinfoimporter.cpp",
                    "src/track/keyfactory.cpp",
                    "src/track/keys.cpp",
                    "src/track/keyutils.cpp",
                    "src/track/playcounter.cpp",
                    "src/track/replaygain.cpp",
+                   "src/track/serato/beatgrid.cpp",
                    "src/track/serato/markers.cpp",
                    "src/track/serato/markers2.cpp",
                    "src/track/serato/tags.cpp",
+                   "src/track/serato/beatsimporter.cpp",
+                   "src/track/serato/cueinfoimporter.cpp",
                    "src/track/track.cpp",
                    "src/track/globaltrackcache.cpp",
                    "src/track/trackfile.cpp",
                    "src/track/trackmetadata.cpp",
-                   "src/track/trackmetadatataglib.cpp",
                    "src/track/tracknumbers.cpp",
                    "src/track/albuminfo.cpp",
                    "src/track/trackinfo.cpp",
                    "src/track/trackrecord.cpp",
                    "src/track/trackref.cpp",
+                   "src/track/taglib/trackmetadata_ape.cpp",
+                   "src/track/taglib/trackmetadata_common.cpp",
+                   "src/track/taglib/trackmetadata_file.cpp",
+                   "src/track/taglib/trackmetadata_id3v2.cpp",
+                   "src/track/taglib/trackmetadata_mp4.cpp",
+                   "src/track/taglib/trackmetadata_riff.cpp",
+                   "src/track/taglib/trackmetadata_xiph.cpp",
 
                    "src/mixer/auxiliary.cpp",
                    "src/mixer/baseplayer.cpp",
@@ -1289,6 +1308,7 @@ class MixxxCore(Feature):
                    "src/util/file.cpp",
                    "src/util/mac.cpp",
                    "src/util/task.cpp",
+                   "src/util/taskmonitor.cpp",
                    "src/util/experiment.cpp",
                    "src/util/xml.cpp",
                    "src/util/tapfilter.cpp",
@@ -1316,11 +1336,11 @@ class MixxxCore(Feature):
                    "src/util/logger.cpp",
                    "src/util/logging.cpp",
                    "src/util/cmdlineargs.cpp",
-                   "src/util/widgethider.cpp",
                    "src/util/autohidpi.cpp",
                    "src/util/screensaver.cpp",
                    "src/util/indexrange.cpp",
                    "src/util/desktophelper.cpp",
+                   "src/util/widgethelper.cpp",
                    "src/util/widgetrendertimer.cpp",
                    "src/util/workerthread.cpp",
                    "src/util/workerthreadscheduler.cpp"
@@ -1346,6 +1366,7 @@ class MixxxCore(Feature):
             'src/controllers/dlgprefcontrollersdlg.ui',
             'src/dialog/dlgaboutdlg.ui',
             'src/dialog/dlgdevelopertoolsdlg.ui',
+            'src/dialog/dlgreplacecuecolordlg.ui',
             'src/library/autodj/dlgautodj.ui',
             'src/library/dlganalysis.ui',
             'src/library/dlgcoverartfullsize.ui',
@@ -1409,6 +1430,7 @@ class MixxxCore(Feature):
 
         if build.build_is_debug:
             build.env.Append(CPPDEFINES='MIXXX_BUILD_DEBUG')
+            build.env.Append(CPPDEFINES='MIXXX_DEBUG_ASSERTIONS_ENABLED')
         elif build.build_is_release:
             build.env.Append(CPPDEFINES='MIXXX_BUILD_RELEASE')
             # Disable assert.h assertions in release mode. Some libraries use
@@ -1432,6 +1454,7 @@ class MixxxCore(Feature):
 
         if int(SCons.ARGUMENTS.get('debug_assertions_fatal', 0)):
             build.env.Append(CPPDEFINES='MIXXX_DEBUG_ASSERTIONS_FATAL')
+            build.env.Append(CPPDEFINES='MIXXX_DEBUG_ASSERTIONS_ENABLED')
 
         if build.toolchain_is_gnu:
             # Default GNU Options

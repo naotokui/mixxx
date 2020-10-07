@@ -164,7 +164,7 @@ Library::Library(
     // TODO(XXX) Rekordbox feature added persistently as the only way to enable it to
     // dynamically appear/disappear when correctly prepared removable devices
     // are mounted/unmounted would be to have some form of timed thread to check
-    // periodically. Not ideal perfomance wise.
+    // periodically. Not ideal performance wise.
     if (m_pConfig->getValue(ConfigKey(kConfigGroup, "ShowRekordboxLibrary"), true)) {
         addFeature(new RekordboxFeature(this, m_pConfig));
     }
@@ -236,16 +236,17 @@ void Library::bindSearchboxWidget(WSearchLineEdit* pSearchboxWidget) {
     connect(this,
             &Library::disableSearch,
             pSearchboxWidget,
-            &WSearchLineEdit::disableSearch);
+            &WSearchLineEdit::slotDisableSearch);
     connect(this,
             &Library::restoreSearch,
             pSearchboxWidget,
-            &WSearchLineEdit::restoreSearch);
+            &WSearchLineEdit::slotRestoreSearch);
     connect(this,
             &Library::setTrackTableFont,
             pSearchboxWidget,
             &WSearchLineEdit::slotSetFont);
     emit setTrackTableFont(m_trackTableFont);
+    m_pLibraryControl->bindSearchboxWidget(pSearchboxWidget);
 }
 
 void Library::bindSidebarWidget(WLibrarySidebar* pSidebarWidget) {
@@ -476,19 +477,19 @@ void Library::slotRequestAddDir(QString dir) {
 
 void Library::slotRequestRemoveDir(QString dir, RemovalType removalType) {
     switch (removalType) {
-        case Library::HideTracks:
-            // Mark all tracks in this directory as deleted but DON'T purge them
-            // in case the user re-adds them manually.
-            m_pTrackCollectionManager->hideAllTracks(dir);
-            break;
-        case Library::PurgeTracks:
-            // The user requested that we purge all metadata.
-            m_pTrackCollectionManager->purgeAllTracks(dir);
-            break;
-        case Library::LeaveTracksUnchanged:
-        default:
-            break;
-
+    case RemovalType::KeepTracks:
+        break;
+    case RemovalType::HideTracks:
+        // Mark all tracks in this directory as deleted but DON'T purge them
+        // in case the user re-adds them manually.
+        m_pTrackCollectionManager->hideAllTracks(dir);
+        break;
+    case RemovalType::PurgeTracks:
+        // The user requested that we purge all metadata.
+        m_pTrackCollectionManager->purgeAllTracks(dir);
+        break;
+    default:
+        DEBUG_ASSERT(!"unreachable");
     }
 
     // Remove the directory from the directory list.

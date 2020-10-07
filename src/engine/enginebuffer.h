@@ -18,16 +18,17 @@
 #ifndef ENGINEBUFFER_H
 #define ENGINEBUFFER_H
 
-#include <QMutex>
-#include <QAtomicInt>
 #include <gtest/gtest_prod.h>
 
-#include "engine/cachingreader/cachingreader.h"
-#include "preferences/usersettings.h"
+#include <QAtomicInt>
+#include <QMutex>
+
 #include "control/controlvalue.h"
+#include "engine/cachingreader/cachingreader.h"
 #include "engine/engineobject.h"
 #include "engine/sync/syncable.h"
-#include "track/track.h"
+#include "preferences/usersettings.h"
+#include "track/track_decl.h"
 #include "util/rotary.h"
 #include "util/types.h"
 
@@ -208,6 +209,7 @@ class EngineBuffer : public EngineObject {
                              QString reason);
     // Fired when passthrough mode is enabled or disabled.
     void slotPassthroughChanged(double v);
+    void slotUpdatedTrackBeats();
 
   private:
     // Add an engine control to the EngineBuffer
@@ -248,7 +250,7 @@ class EngineBuffer : public EngineObject {
     void processTrackLocked(CSAMPLE* pOutput, const int iBufferSize, int sample_rate);
 
     // Holds the name of the control group
-    QString m_group;
+    const QString m_group;
     UserSettingsPointer m_pConfig;
 
     friend class CueControlTest;
@@ -264,6 +266,8 @@ class EngineBuffer : public EngineObject {
     FRIEND_TEST(EngineSyncTest, HalfDoubleBpmTest);
     FRIEND_TEST(EngineSyncTest, HalfDoubleThenPlay);
     FRIEND_TEST(EngineSyncTest, UserTweakBeatDistance);
+    FRIEND_TEST(EngineSyncTest, UserTweakPreservedInSeek);
+    FRIEND_TEST(EngineSyncTest, BeatMapQantizePlay);
     FRIEND_TEST(EngineBufferTest, ScalerNoTransport);
     EngineSync* m_pEngineSync;
     SyncControl* m_pSyncControl;
@@ -313,7 +317,7 @@ class EngineBuffer : public EngineObject {
     double m_rate_old;
 
     // Copy of length of file
-    int m_trackSamplesOld;
+    double m_trackSamplesOld;
 
     // Copy of file sample rate
     double m_trackSampleRateOld;

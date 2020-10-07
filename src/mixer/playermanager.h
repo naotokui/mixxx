@@ -4,14 +4,14 @@
 #ifndef MIXER_PLAYERMANAGER_H
 #define MIXER_PLAYERMANAGER_H
 
-#include <QObject>
 #include <QList>
 #include <QMap>
 #include <QMutex>
+#include <QObject>
 
 #include "analyzer/trackanalysisscheduler.h"
 #include "preferences/usersettings.h"
-#include "track/track.h"
+#include "track/track_decl.h"
 #include "util/parented_ptr.h"
 #include "util/performancetimer.h"
 
@@ -28,11 +28,12 @@ class Sampler;
 class SamplerBank;
 class SoundManager;
 class VisualsManager;
+class ControlProxy;
 
 // For mocking PlayerManager.
 class PlayerManagerInterface {
   public:
-    virtual ~PlayerManagerInterface() {};
+    virtual ~PlayerManagerInterface() = default;
 
     // Get a BaseTrackPlayer (i.e. a Deck or a Sampler) by its group
     virtual BaseTrackPlayer* getPlayer(QString group) const = 0;
@@ -65,7 +66,7 @@ class PlayerManager : public QObject, public PlayerManagerInterface {
                   EffectsManager* pEffectsManager,
                   VisualsManager* pVisualsManager,
                   EngineMaster* pEngine);
-    virtual ~PlayerManager();
+    ~PlayerManager() override;
 
     // Add a deck to the PlayerManager
     // (currently unused, kept for consistency with other types)

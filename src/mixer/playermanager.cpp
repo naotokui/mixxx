@@ -5,9 +5,8 @@
 #include <QMutexLocker>
 
 #include "control/controlobject.h"
-#include "control/controlobject.h"
-#include "effects/effectsmanager.h"
 #include "effects/effectrack.h"
+#include "effects/effectsmanager.h"
 #include "engine/channels/enginedeck.h"
 #include "engine/enginemaster.h"
 #include "library/library.h"
@@ -17,14 +16,14 @@
 #include "mixer/previewdeck.h"
 #include "mixer/sampler.h"
 #include "mixer/samplerbank.h"
+#include "preferences/dialog/dlgprefdeck.h"
 #include "soundio/soundmanager.h"
 #include "track/track.h"
 #include "util/assert.h"
+#include "util/defs.h"
 #include "util/logger.h"
-#include "util/stat.h"
 #include "util/sleepableqthread.h"
-#include "preferences/dialog/dlgprefdeck.h"
-
+#include "util/stat.h"
 
 namespace {
 
@@ -43,30 +42,29 @@ QAtomicPointer<ControlProxy> PlayerManager::m_pCOPNumSamplers;
 QAtomicPointer<ControlProxy> PlayerManager::m_pCOPNumPreviewDecks;
 
 PlayerManager::PlayerManager(UserSettingsPointer pConfig,
-                             SoundManager* pSoundManager,
-                             EffectsManager* pEffectsManager,
-                             VisualsManager* pVisualsManager,
-                             EngineMaster* pEngine) :
-        m_mutex(QMutex::Recursive),
-        m_pConfig(pConfig),
-        m_pSoundManager(pSoundManager),
-        m_pEffectsManager(pEffectsManager),
-        m_pVisualsManager(pVisualsManager),
-        m_pEngine(pEngine),
-        // NOTE(XXX) LegacySkinParser relies on these controls being Controls
-        // and not ControlProxies.
-        m_pCONumDecks(new ControlObject(
-                ConfigKey("[Master]", "num_decks"), true, true)),
-        m_pCONumSamplers(new ControlObject(
-                ConfigKey("[Master]", "num_samplers"), true, true)),
-        m_pCONumPreviewDecks(new ControlObject(
-                ConfigKey("[Master]", "num_preview_decks"), true, true)),
-        m_pCONumMicrophones(new ControlObject(
-                ConfigKey("[Master]", "num_microphones"), true, true)),
-        m_pCONumAuxiliaries(new ControlObject(
-                ConfigKey("[Master]", "num_auxiliaries"), true, true)),
-        m_pAutoDjEnabled(make_parented<ControlProxy>("[AutoDJ]", "enabled", this)),
-        m_pTrackAnalysisScheduler(TrackAnalysisScheduler::NullPointer()) {
+        SoundManager* pSoundManager,
+        EffectsManager* pEffectsManager,
+        VisualsManager* pVisualsManager,
+        EngineMaster* pEngine)
+        : m_mutex(QMutex::Recursive),
+          m_pConfig(pConfig),
+          m_pSoundManager(pSoundManager),
+          m_pEffectsManager(pEffectsManager),
+          m_pVisualsManager(pVisualsManager),
+          m_pEngine(pEngine),
+          // NOTE(XXX) LegacySkinParser relies on these controls being Controls
+          // and not ControlProxies.
+          m_pCONumDecks(new ControlObject(
+                  ConfigKey("[Master]", "num_decks"), true, true)),
+          m_pCONumSamplers(new ControlObject(
+                  ConfigKey("[Master]", "num_samplers"), true, true)),
+          m_pCONumPreviewDecks(new ControlObject(
+                  ConfigKey("[Master]", "num_preview_decks"), true, true)),
+          m_pCONumMicrophones(new ControlObject(
+                  ConfigKey("[Master]", "num_microphones"), true, true)),
+          m_pCONumAuxiliaries(new ControlObject(
+                  ConfigKey("[Master]", "num_auxiliaries"), true, true)),
+          m_pTrackAnalysisScheduler(TrackAnalysisScheduler::NullPointer()) {
     m_pCONumDecks->connectValueChangeRequest(this,
             &PlayerManager::slotChangeNumDecks, Qt::DirectConnection);
     m_pCONumSamplers->connectValueChangeRequest(this,
@@ -224,7 +222,7 @@ unsigned int PlayerManager::numDecks() {
         }
     }
     // m_pCOPNumDecks->get() fails on MacOs
-    return pCOPNumDecks ? pCOPNumDecks->get() : 0;
+    return pCOPNumDecks ? static_cast<int>(pCOPNumDecks->get()) : 0;
 }
 
 // static
@@ -242,7 +240,7 @@ unsigned int PlayerManager::numSamplers() {
         }
     }
     // m_pCOPNumSamplers->get() fails on MacOs
-    return pCOPNumSamplers ? pCOPNumSamplers->get() : 0;
+    return pCOPNumSamplers ? static_cast<int>(pCOPNumSamplers->get()) : 0;
 }
 
 // static
@@ -261,12 +259,19 @@ unsigned int PlayerManager::numPreviewDecks() {
         }
     }
     // m_pCOPNumPreviewDecks->get() fails on MacOs
-    return pCOPNumPreviewDecks ? pCOPNumPreviewDecks->get() : 0;
+    return pCOPNumPreviewDecks ? static_cast<int>(pCOPNumPreviewDecks->get()) : 0;
 }
 
 void PlayerManager::slotChangeNumDecks(double v) {
     QMutexLocker locker(&m_mutex);
     int num = (int)v;
+
+    VERIFY_OR_DEBUG_ASSERT(num <= kMaxNumberOfDecks) {
+        qWarning() << "Number of decks exceeds the maximum we expect."
+                   << num << "vs" << kMaxNumberOfDecks
+                   << " Refusing to add another deck. Please update util/defs.h";
+        return;
+    }
 
     // Update the soundmanager config even if the number of decks has been
     // reduced.
@@ -596,8 +601,8 @@ void PlayerManager::slotLoadTrackToPlayer(TrackPointer pTrack, QString group, bo
     // button repeatedly.
     // AutoDJProcessor is initialized after PlayerManager, so check that the
     // ControlProxy is pointing to the real ControlObject.
-    if (!m_pAutoDjEnabled->valid()) {
-        m_pAutoDjEnabled->initialize(ConfigKey("[AutoDJ]", "enabled"));
+    if (!m_pAutoDjEnabled) {
+        m_pAutoDjEnabled = make_parented<ControlProxy>("[AutoDJ]", "enabled", this);
     }
     bool autoDjSkipClone = m_pAutoDjEnabled->get() && (pPlayer == m_decks.at(0) || pPlayer == m_decks.at(1));
 

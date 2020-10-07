@@ -74,6 +74,10 @@ EffectChainSlot::EffectChainSlot(EffectRack* pRack, const QString& group,
                                    ConfigKey(m_group, "show_focus"));
     m_pControlChainShowFocus->setButtonMode(ControlPushButton::TOGGLE);
 
+    m_pControlChainHasControllerFocus = new ControlPushButton(
+                                   ConfigKey(m_group, "controller_input_active"));
+    m_pControlChainHasControllerFocus->setButtonMode(ControlPushButton::TOGGLE);
+
     m_pControlChainShowParameters = new ControlPushButton(
                                         ConfigKey(m_group, "show_parameters"),
                                         true);
@@ -100,6 +104,7 @@ EffectChainSlot::~EffectChainSlot() {
     delete m_pControlChainNextPreset;
     delete m_pControlChainSelector;
     delete m_pControlChainShowFocus;
+    delete m_pControlChainHasControllerFocus;
     delete m_pControlChainShowParameters;
     delete m_pControlChainFocusedEffect;
 
@@ -303,7 +308,7 @@ EffectSlotPointer EffectChainSlot::addEffectSlot(const QString& group) {
 
     EffectSlotPointer pSlot(pEffectSlot);
     m_slots.append(pSlot);
-    int numEffectSlots = m_pControlNumEffectSlots->get() + 1;
+    int numEffectSlots = static_cast<int>(m_pControlNumEffectSlots->get()) + 1;
     m_pControlNumEffectSlots->forceSet(numEffectSlots);
     m_pControlChainFocusedEffect->setStates(numEffectSlots);
     return pSlot;

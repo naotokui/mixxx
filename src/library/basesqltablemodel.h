@@ -49,7 +49,7 @@ class BaseSqlTableModel : public BaseTrackTableModel {
     TrackId getTrackId(const QModelIndex& index) const override;
     QString getTrackLocation(const QModelIndex& index) const override;
 
-    const QLinkedList<int> getTrackRows(TrackId trackId) const override {
+    const QVector<int> getTrackRows(TrackId trackId) const override {
         return m_trackIdToRows.value(trackId);
     }
 
@@ -75,10 +75,6 @@ class BaseSqlTableModel : public BaseTrackTableModel {
     ///////////////////////////////////////////////////////////////////////////
     QVariant rawValue(
             const QModelIndex& index) const override;
-    QVariant roleValue(
-            const QModelIndex& index,
-            QVariant&& rawValue,
-            int role) const override;
 
     bool setTrackValueForColumn(
             const TrackPointer& pTrack,
@@ -105,8 +101,6 @@ class BaseSqlTableModel : public BaseTrackTableModel {
 
   private slots:
     void tracksChanged(QSet<TrackId> trackIds);
-
-    void slotRefreshCoverRows(QList<int> rows);
 
   private:
     BaseCoverArtDelegate* doCreateCoverArtDelegate(
@@ -136,7 +130,7 @@ class BaseSqlTableModel : public BaseTrackTableModel {
         }
     };
 
-    typedef QHash<TrackId, QLinkedList<int>> TrackId2Rows;
+    typedef QHash<TrackId, QVector<int>> TrackId2Rows;
 
     void clearRows();
     void replaceRows(

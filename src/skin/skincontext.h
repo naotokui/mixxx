@@ -32,7 +32,7 @@ class SkinContext {
             const SkinContext* parent);
     virtual ~SkinContext();
 
-    // Not copyable
+    // Not copiable
     SkinContext(const SkinContext&) = delete;
     SkinContext& operator=(const SkinContext&) = delete;
 
@@ -174,7 +174,7 @@ class SkinContext {
         QDomNode child = selectNode(node, nodeName);
         if (!child.isNull()) {
             bool ok = false;
-            double result = nodeToString(child).toInt(&ok);
+            int result = nodeToString(child).toInt(&ok);
             if (ok) {
                 *value = result;
                 return true;

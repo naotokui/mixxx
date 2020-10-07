@@ -11,7 +11,8 @@
 #include "engine/controls/enginecontrol.h"
 #include "preferences/colorpalettesettings.h"
 #include "preferences/usersettings.h"
-#include "track/track.h"
+#include "track/cue.h"
+#include "track/track_decl.h"
 
 #define NUM_HOT_CUES 37
 
@@ -95,7 +96,7 @@ class HotcueControl : public QObject {
   private:
     ConfigKey keyForControl(int hotcue, const char* name);
 
-    QString m_group;
+    const QString m_group;
     int m_iHotcueNumber;
     CuePointer m_pCue;
 
@@ -132,6 +133,7 @@ class CueControl : public EngineControl {
     bool getPlayFlashingAtPause();
     SeekOnLoadMode getSeekOnLoadPreference();
     void trackLoaded(TrackPointer pNewTrack) override;
+    void trackBeatsUpdated(mixxx::BeatsPointer pBeats) override;
 
   private slots:
     void quantizeChanged(double v);
@@ -139,7 +141,6 @@ class CueControl : public EngineControl {
     void cueUpdated();
     void trackAnalyzed();
     void trackCuesUpdated();
-    void trackBeatsUpdated();
     void hotcueSet(HotcueControl* pControl, double v);
     void hotcueGoto(HotcueControl* pControl, double v);
     void hotcueGotoAndPlay(HotcueControl* pControl, double v);
@@ -193,6 +194,7 @@ class CueControl : public EngineControl {
     double quantizeCuePoint(double position);
     double getQuantizedCurrentPosition();
     TrackAt getTrackAt() const;
+    void seekOnLoad(double seekOnLoadPosition);
 
     UserSettingsPointer m_pConfig;
     ColorPaletteSettings m_colorPaletteSettings;
@@ -203,6 +205,7 @@ class CueControl : public EngineControl {
     ControlObject* m_pQuantizeEnabled;
     ControlObject* m_pClosestBeat;
     bool m_bypassCueSetByPlay;
+    ControlValueAtomic<double> m_usedSeekOnLoadPosition;
 
     const int m_iNumHotCues;
     QList<HotcueControl*> m_hotcueControls;

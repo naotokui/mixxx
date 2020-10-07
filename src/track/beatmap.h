@@ -10,13 +10,16 @@
 
 #include <QMutex>
 
-#include "track/track.h"
-#include "track/beats.h"
 #include "proto/beats.pb.h"
+#include "track/beats.h"
 
 #define BEAT_MAP_VERSION "BeatMap-1.0"
 
+class Track;
+
 typedef QList<mixxx::track::io::Beat> BeatList;
+
+namespace mixxx {
 
 class BeatMap final : public Beats {
   public:
@@ -109,4 +112,5 @@ class BeatMap final : public Beats {
     BeatList m_beats;
 };
 
+} // namespace mixxx
 #endif /* BEATMAP_H_ */

@@ -6,7 +6,8 @@
 
 #include "preferences/colorpalettesettings.h"
 #include "track/cue.h"
-#include "track/track.h"
+#include "track/track_decl.h"
+#include "util/widgethelper.h"
 #include "widget/wcolorpicker.h"
 
 class WCueMenuPopup : public QWidget {
@@ -30,16 +31,11 @@ class WCueMenuPopup : public QWidget {
         }
     }
 
-    void popup(const QPoint& p, QAction* atAction = nullptr) {
-        Q_UNUSED(atAction);
-        qDebug() << "Showing menu at" << p;
-        move(p);
+    void popup(const QPoint& p) {
+        auto parentWidget = static_cast<QWidget*>(parent());
+        QPoint topLeft = mixxx::widgethelper::mapPopupToScreen(*parentWidget, p, size());
+        move(topLeft);
         show();
-    }
-
-    void hide() {
-        emit aboutToHide();
-        QWidget::hide();
     }
 
     void show() {
@@ -68,4 +64,7 @@ class WCueMenuPopup : public QWidget {
     QLineEdit* m_pEditLabel;
     WColorPicker* m_pColorPicker;
     QPushButton* m_pDeleteCue;
+
+  protected:
+    void closeEvent(QCloseEvent* event) override;
 };

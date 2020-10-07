@@ -27,11 +27,14 @@
 #include "waveform/waveformwidgetfactory.h"
 
 EngineDeck::EngineDeck(const ChannelHandleAndGroup& handle_group,
-                       UserSettingsPointer pConfig,
-                       EngineMaster* pMixingEngine,
-                       EffectsManager* pEffectsManager,
-                       EngineChannel::ChannelOrientation defaultOrientation)
-        : EngineChannel(handle_group, defaultOrientation, pEffectsManager),
+        UserSettingsPointer pConfig,
+        EngineMaster* pMixingEngine,
+        EffectsManager* pEffectsManager,
+        EngineChannel::ChannelOrientation defaultOrientation,
+        bool primaryDeck)
+        : EngineChannel(handle_group, defaultOrientation, pEffectsManager,
+                  /*isTalkoverChannel*/ false,
+                  primaryDeck),
           m_pConfig(pConfig),
           m_pInputConfigured(new ControlObject(ConfigKey(getGroup(), "input_configured"))),
           m_pPassing(new ControlPushButton(ConfigKey(getGroup(), "passthrough"))),
@@ -87,9 +90,12 @@ void EngineDeck::process(CSAMPLE* pOut, const int iBufferSize) {
 
     EngineEffectsManager* pEngineEffectsManager = m_pEffectsManager->getEngineEffectsManager();
     if (pEngineEffectsManager != nullptr) {
-        pEngineEffectsManager->processPreFaderInPlace(
-            m_group.handle(), m_pEffectsManager->getMasterHandle(),
-            pOut, iBufferSize, m_pSampleRate->get());
+        pEngineEffectsManager->processPreFaderInPlace(m_group.handle(),
+                m_pEffectsManager->getMasterHandle(),
+                pOut,
+                iBufferSize,
+                // TODO(jholthuis): Use mixxx::audio::SampleRate instead
+                static_cast<unsigned int>(m_pSampleRate->get()));
     }
 
     // Update VU meter

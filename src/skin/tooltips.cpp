@@ -27,6 +27,7 @@ QList<QString>& Tooltips::add(QString id) {
 void Tooltips::addStandardTooltips() {
     QString dropTracksHere = tr("Drop tracks from library, external file manager, or other decks/samplers here.");
     QString dragItem = tr("Drag this item to other decks/samplers, to crates and playlist or to external file manager.");
+    QString trackMenu = tr("Right-click to open the track context menu.");
     QString resetToDefault = tr("Reset to default value.");
     QString leftClick = tr("Left-click");
     QString rightClick = tr("Right-click");
@@ -69,6 +70,10 @@ void Tooltips::addStandardTooltips() {
             << tr("Right click to show cover art of loaded track.")
             << dropTracksHere
             << tr("If Vinyl control is enabled, displays time-coded vinyl signal quality (see Preferences -> Vinyl Control).");
+
+    add("big_spinny_coverart")
+            << tr("Big Spinny/Cover Art")
+            << tr("Show a big version of the Spinny or track cover art if enabled.");
 
     add("pregain")
             << tr("Gain")
@@ -242,9 +247,19 @@ void Tooltips::addStandardTooltips() {
             << tr("Cover Art")
             << tr("Show/hide Cover Art.");
 
+    add("show_library_coverart")
+            << tr("Cover Art")
+            << tr("Show/hide Cover Art of the selected track in the library.");
+
     add("toggle_4decks")
             << tr("Toggle 4 Decks")
             << tr("Switches between showing 2 decks and 4 decks.");
+
+    add("show_waveforms")
+            << tr("Show/hide the scrolling waveforms");
+
+    add("show_beatgrid_controls")
+            << tr("Show/hide the beatgrid controls section");
 
     add("show_library")
             << tr("Show Library")
@@ -256,11 +271,15 @@ void Tooltips::addStandardTooltips() {
 
     add("maximize_library")
             << tr("Maximize Library")
-            << tr("Maximize the track library to take up all the available screen space.");
+            << tr("Hide all skin sections except the decks to have more screen space for the track library.");
 
     add("show_mixer")
             << tr("Toggle Mixer")
             << tr("Show or hide the mixer.");
+
+    add("show_vumeters")
+            << tr("Volume Meters")
+            << tr("Show/hide volume meters for channels and master output.");
 
     add("microphone_volume")
             << tr("Microphone Volume")
@@ -285,15 +304,17 @@ void Tooltips::addStandardTooltips() {
     add("talkover_duck_mode")
             << tr("Microphone Talkover Mode")
             << tr("Off: Do not reduce music volume")
-            << tr("Auto: Automatically reduce music volume when microphones are in use. Adjust the amount the music volume is reduced with the Strength knob.")
-            << tr("Manual: Reduce music volume by a fixed amount set by the Strength knob.");
+            << tr("Auto: Automatically reduce music volume when microphone volume rises above threshold.")
+            << tr("Manual: Reduce music volume by a fixed amount set by the Strength knob.")
+            << tr("Adjust the amount the music volume is reduced with the Strength knob.");
 
     add("talkover_duck_strength")
             << tr("Microphone Talkover Ducking Strength")
+            << tr("Adjust the amount the music volume is reduced with the Strength knob.")
             << tr("Behavior depends on Microphone Talkover Mode:")
             << tr("Off: Does nothing")
-            << tr("Auto: Sets how much to reduce the music volume when microphones are in use.")
-            << tr("Manual: Sets how much to reduce the music volume, regardless of volume of microphone inputs.");
+            << tr("Auto: Sets how much to reduce the music volume when the volume of active microphones rises above threshold.")
+            << tr("Manual: Sets how much to reduce the music volume, when talkover is activated regardless of volume of microphone inputs.");
 
     QString changeAmount = tr("Change the step-size in the Preferences -> Interface menu.");
     add("rate_perm_up_rate_perm_up_small")
@@ -396,6 +417,18 @@ void Tooltips::addStandardTooltips() {
             << tempoDisplay
             << tr("When tapped repeatedly, adjusts the BPM to match the tapped BPM.");
 
+    add("shift_cues_earlier")
+            << tr("Shift cues earlier")
+            << tr("Shift cues imported from Serato or Rekordbox if they are slightly off time.")
+            << tr("Left click: shift 10 milliseconds earlier")
+            << tr("Right click: shift 1 millisecond earlier");
+
+    add("shift_cues_later")
+            << tr("Shift cues later")
+            << tr("Shift cues imported from Serato or Rekordbox if they are slightly off time.")
+            << tr("Left click: shift 10 milliseconds later")
+            << tr("Right click: shift 1 millisecond later");
+
     add("show_spinny")
             << tr("Spinning Vinyl")
             << tr("Show/hide the spinning vinyl section.");
@@ -432,19 +465,28 @@ void Tooltips::addStandardTooltips() {
             << QString("%1: %2").arg(leftClick, tr("Starts playing from the beginning of the track."))
             << QString("%1: %2").arg(rightClick, tr("Jumps to the beginning of the track and stops."));
 
-    // Currently used for decks
+    QString whilePlaying = tr("(while playing)");
+    QString whileStopped = tr("(while stopped)");
     QString cueSet = tr("Places a cue point at the current position on the waveform.");
+    QString cueWhilePlaying = tr("Stops track at cue point, OR go to cue point and play after release (CUP mode).");
+    QString cueWhileStopped = tr("Set cue point (Pioneer/Mixxx/Numark mode), set cue point and play after release (CUP mode) "
+            "OR preview from it (Denon mode).");
+    QString cueHint = tr("Hint: Change the default cue mode in Preferences -> Interface.");
+
+    // Currently used for decks
     add("play_cue_set")
             << tr("Play/Pause")
             << QString("%1: %2").arg(leftClick, tr("Plays or pauses the track."))
             << QString("%1: %2").arg(rightClick, cueSet);
 
-    QString whilePlaying = tr("(while playing)");
-    QString whileStopped = tr("(while stopped)");
-    QString cueWhilePlaying = tr("Stops track at cue point, OR go to cue point and play after release (CUP mode).");
-    QString cueWhileStopped = tr("Set cue point (Pioneer/Mixxx/Numark mode), set cue point and play after release (CUP mode) "
-            "OR preview from it (Denon mode).");
-    QString cueHint = tr("Hint: Change the default cue mode in Preferences -> Interface.");
+    // Currently used for minimal decks
+    add("play_cue_default")
+            << tr("Play/Pause")
+            << QString("%1: %2").arg(leftClick, tr("Plays or pauses the track."))
+            << QString("%1 %2: %3").arg(rightClick, whilePlaying, cueWhilePlaying)
+            << QString("%1 %2: %3").arg(rightClick, whileStopped, cueWhileStopped)
+            << cueHint
+            << quantizeSnap;
     add("cue_default_cue_gotoandstop")
             << tr("Cue")
             << QString("%1 %2: %3").arg(leftClick, whilePlaying, cueWhilePlaying)
@@ -462,8 +504,8 @@ void Tooltips::addStandardTooltips() {
 
       add("pfl")
             << tr("Headphone")
-            << tr("Sends the selected channel's audio to the headphone output,")
-            << tr("selected in Preferences -> Sound Hardware.");
+            << tr("Sends the selected channel's audio to the headphone output, "
+                  "selected in Preferences -> Sound Hardware.");
 
     add("mute")
             << tr("Mute")
@@ -471,8 +513,8 @@ void Tooltips::addStandardTooltips() {
 
     add("master_enable")
             << tr("Master enable")
-            << tr("Hold or short click for latching to")
-            << tr("mix this input into the master output.");
+            << tr("Hold or short click for latching to "
+                  "mix this input into the master output.");
 
     add("back_start")
             << tr("Fast Rewind")
@@ -694,7 +736,8 @@ void Tooltips::addStandardTooltips() {
     add("track_time")
             << tr("Track Time")
             << tr("Displays the elapsed and/or remaining time of the track loaded.")
-            << tr("Click to toggle between time elapsed/remaining time/both.");
+            << tr("Click to toggle between time elapsed/remaining time/both.")
+            << tr("Hint: Change the time format in Preferences -> Decks.");
 
     add("track_duration")
             << tr("Track Duration")
@@ -706,19 +749,24 @@ void Tooltips::addStandardTooltips() {
             << tr("Displays the artist of the loaded track.")
             << trackTags
             << dropTracksHere
-            << dragItem;
+            << dragItem
+            << trackMenu;
 
     add("track_title")
             << tr("Track Title")
             << tr("Displays the title of the loaded track.")
             << trackTags
             << dropTracksHere
-            << dragItem;
+            << dragItem
+            << trackMenu;
 
     add("track_album")
             << tr("Track Album")
             << tr("Displays the album name of the loaded track.")
-            << trackTags;
+            << trackTags
+            << dropTracksHere
+            << dragItem
+            << trackMenu;
 
     add("track_key")
             //: The musical key of a track

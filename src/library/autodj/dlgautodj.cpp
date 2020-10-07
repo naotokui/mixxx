@@ -82,7 +82,10 @@ DlgAutoDJ::DlgAutoDJ(
     // Do not set this because it disables auto-scrolling
     //m_pTrackTableView->setDragDropMode(QAbstractItemView::InternalMove);
 
-    connect(pushButtonAutoDJ, &QPushButton::toggled, this, &DlgAutoDJ::toggleAutoDJButton);
+    connect(pushButtonAutoDJ,
+            &QPushButton::clicked,
+            this,
+            &DlgAutoDJ::toggleAutoDJButton);
 
     setupActionButton(pushButtonFadeNow, &DlgAutoDJ::fadeNowButton, tr("Fade"));
     setupActionButton(pushButtonSkipNext, &DlgAutoDJ::skipNextButton, tr("Skip"));
@@ -173,7 +176,7 @@ DlgAutoDJ::DlgAutoDJ(
             &DlgAutoDJ::slotTransitionModeChanged);
 
     connect(pushButtonRepeatPlaylist,
-            &QPushButton::toggled,
+            &QPushButton::clicked,
             this,
             &DlgAutoDJ::slotRepeatPlaylistChanged);
     if (m_bShowButtonText) {
@@ -187,11 +190,12 @@ DlgAutoDJ::DlgAutoDJ(
     // Setup DlgAutoDJ UI based on the current AutoDJProcessor state. Keep in
     // mind that AutoDJ may already be active when DlgAutoDJ is created (due to
     // skin changes, etc.).
-    spinBoxTransition->setValue(m_pAutoDJProcessor->getTransitionTime());
+    spinBoxTransition->setValue(static_cast<int>(m_pAutoDJProcessor->getTransitionTime()));
     connect(m_pAutoDJProcessor,
             &AutoDJProcessor::transitionTimeChanged,
             this,
             &DlgAutoDJ::transitionTimeChanged);
+
     connect(m_pAutoDJProcessor,
             &AutoDJProcessor::autoDJStateChanged,
             this,
@@ -358,5 +362,5 @@ void DlgAutoDJ::updateSelectionInfo() {
 }
 
 bool DlgAutoDJ::hasFocus() const {
-    return QWidget::hasFocus();
+    return m_pTrackTableView->hasFocus();
 }

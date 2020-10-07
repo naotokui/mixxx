@@ -16,6 +16,7 @@
 #include "track/keyutils.h"
 #include "track/trackmetadata.h"
 #include "util/assert.h"
+#include "util/datetime.h"
 #include "util/db/dbconnection.h"
 #include "util/duration.h"
 #include "util/performancetimer.h"
@@ -616,19 +617,6 @@ QVariant BaseSqlTableModel::rawValue(
     return m_trackSource->data(trackId, trackSourceColumn);
 }
 
-QVariant BaseSqlTableModel::roleValue(
-        const QModelIndex& index,
-        QVariant&& rawValue,
-        int role) const {
-    if (role == Qt::DisplayRole &&
-            index.column() == fieldIndex(ColumnCache::COLUMN_PLAYLISTTRACKSTABLE_DATETIMEADDED)) {
-        QDateTime gmtDate = rawValue.toDateTime();
-        gmtDate.setTimeSpec(Qt::UTC);
-        return gmtDate.toLocalTime();
-    }
-    return BaseTrackTableModel::roleValue(index, std::move(rawValue), role);
-}
-
 bool BaseSqlTableModel::setTrackValueForColumn(
         const TrackPointer& pTrack,
         int column,
@@ -732,8 +720,8 @@ void BaseSqlTableModel::tracksChanged(QSet<TrackId> trackIds) {
 
     const int numColumns = columnCount();
     for (const auto& trackId : trackIds) {
-        QLinkedList<int> rows = getTrackRows(trackId);
-        foreach (int row, rows) {
+        const auto rows = getTrackRows(trackId);
+        for (int row : rows) {
             //qDebug() << "Row in this result set was updated. Signalling update. track:" << trackId << "row:" << row;
             QModelIndex topLeft = index(row, 0);
             QModelIndex bottomRight = index(row, numColumns);
@@ -745,17 +733,6 @@ void BaseSqlTableModel::tracksChanged(QSet<TrackId> trackIds) {
 BaseCoverArtDelegate* BaseSqlTableModel::doCreateCoverArtDelegate(
         QTableView* pTableView) const {
     return new CoverArtDelegate(pTableView);
-}
-
-void BaseSqlTableModel::slotRefreshCoverRows(QList<int> rows) {
-    if (rows.isEmpty()) {
-        return;
-    }
-    const int column = fieldIndex(LIBRARYTABLE_COVERART);
-    VERIFY_OR_DEBUG_ASSERT(column >= 0) {
-        return;
-    }
-    emitDataChangedForMultipleRowsInColumn(rows, column);
 }
 
 void BaseSqlTableModel::hideTracks(const QModelIndexList& indices) {
