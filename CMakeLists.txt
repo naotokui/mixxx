@@ -49,6 +49,10 @@ endif()
 #######################################################################
 
 set(CMAKE_CXX_STANDARD 17)
+if(MSVC)
+  # Ensure MSVC populates __cplusplus correctly.
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zc:__cplusplus")
+endif()
 
 # Speed up builds on HDDs
 if(GNU_GCC OR LLVM_CLANG)
@@ -353,11 +357,8 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/control/controlproxy.cpp
   src/control/controlpushbutton.cpp
   src/control/controlttrotary.cpp
-  src/controllers/colormapper.cpp
-  src/controllers/colormapperjsproxy.cpp
   src/controllers/controller.cpp
   src/controllers/controllerdebug.cpp
-  src/controllers/controllerengine.cpp
   src/controllers/controllerenumerator.cpp
   src/controllers/controllerinputmappingtablemodel.cpp
   src/controllers/controllerlearningeventfilter.cpp
@@ -379,6 +380,12 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/controllers/dlgprefcontrollerdlg.ui
   src/controllers/dlgprefcontrollers.cpp
   src/controllers/dlgprefcontrollersdlg.ui
+  src/controllers/engine/controllerengine.cpp
+  src/controllers/engine/controllerenginejsproxy.cpp
+  src/controllers/engine/colormapper.cpp
+  src/controllers/engine/colormapperjsproxy.cpp
+  src/controllers/engine/scriptconnection.cpp
+  src/controllers/engine/scriptconnectionjsproxy.cpp
   src/controllers/keyboard/keyboardeventfilter.cpp
   src/controllers/learningutils.cpp
   src/controllers/midi/midicontroller.cpp
@@ -413,6 +420,7 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/effects/builtin/linkwitzriley8eqeffect.cpp
   src/effects/builtin/loudnesscontoureffect.cpp
   src/effects/builtin/metronomeeffect.cpp
+  src/effects/builtin/whitenoiseeffect.cpp
   src/effects/builtin/moogladder4filtereffect.cpp
   src/effects/builtin/parametriceqeffect.cpp
   src/effects/builtin/phasereffect.cpp
@@ -514,10 +522,8 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/library/baseexternallibraryfeature.cpp
   src/library/baseexternalplaylistmodel.cpp
   src/library/baseexternaltrackmodel.cpp
-  src/library/baseplaylistfeature.cpp
   src/library/basesqltablemodel.cpp
   src/library/basetrackcache.cpp
-  src/library/basetracksetfeature.cpp
   src/library/basetracktablemodel.cpp
   src/library/bpmdelegate.cpp
   src/library/browse/browsefeature.cpp
@@ -530,10 +536,6 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/library/coverartcache.cpp
   src/library/coverartdelegate.cpp
   src/library/coverartutils.cpp
-  src/library/crate/cratefeature.cpp
-  src/library/crate/cratefeaturehelper.cpp
-  src/library/crate/cratestorage.cpp
-  src/library/crate/cratetablemodel.cpp
   src/library/dao/analysisdao.cpp
   src/library/dao/autodjcratesdao.cpp
   src/library/dao/cuedao.cpp
@@ -573,7 +575,6 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/library/parsercsv.cpp
   src/library/parserm3u.cpp
   src/library/parserpls.cpp
-  src/library/playlistfeature.cpp
   src/library/playlisttablemodel.cpp
   src/library/previewbuttondelegate.cpp
   src/library/proxytrackmodel.cpp
@@ -593,7 +594,6 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/library/searchqueryparser.cpp
   src/library/serato/seratofeature.cpp
   src/library/serato/seratoplaylistmodel.cpp
-  src/library/setlogfeature.cpp
   src/library/sidebarmodel.cpp
   src/library/songdownloader.cpp
   src/library/stardelegate.cpp
@@ -606,6 +606,15 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/library/trackloader.cpp
   src/library/trackmodeliterator.cpp
   src/library/trackprocessing.cpp
+  src/library/trackset/baseplaylistfeature.cpp
+  src/library/trackset/basetracksetfeature.cpp
+  src/library/trackset/crate/cratefeature.cpp
+  src/library/trackset/crate/cratefeaturehelper.cpp
+  src/library/trackset/crate/cratestorage.cpp
+  src/library/trackset/crate/cratetablemodel.cpp
+  src/library/trackset/playlistfeature.cpp
+  src/library/trackset/setlogfeature.cpp
+  src/library/trackset/tracksettablemodel.cpp
   src/library/traktor/traktorfeature.cpp
   src/library/treeitem.cpp
   src/library/treeitemmodel.cpp
@@ -622,7 +631,7 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/mixxx.cpp
   src/mixxxapplication.cpp
   src/musicbrainz/chromaprinter.cpp
-  src/musicbrainz/crc.c
+  src/musicbrainz/crc.cpp
   src/musicbrainz/gzip.cpp
   src/musicbrainz/musicbrainz.cpp
   src/musicbrainz/musicbrainzxml.cpp
@@ -767,6 +776,7 @@ add_library(mixxx-lib STATIC EXCLUDE_FROM_ALL
   src/util/duration.cpp
   src/util/experiment.cpp
   src/util/file.cpp
+  src/util/imageutils.cpp
   src/util/indexrange.cpp
   src/util/logger.cpp
   src/util/logging.cpp
@@ -942,7 +952,7 @@ if(MSVC)
     target_compile_options(mixxx-lib PUBLIC /W3)
   endif()
 else()
-  target_compile_options(mixxx-lib PUBLIC -Wall -Wextra)
+  target_compile_options(mixxx-lib PUBLIC -Wall -Wextra -Woverloaded-virtual)
   if(WARNINGS_PEDANTIC)
     target_compile_options(mixxx-lib PUBLIC -pedantic)
   endif()
@@ -1272,6 +1282,7 @@ add_executable(mixxx-test
   src/test/enginemicrophonetest.cpp
   src/test/enginesynctest.cpp
   src/test/globaltrackcache_test.cpp
+  src/test/imageutils_test.cpp
   src/test/indexrange_test.cpp
   src/test/keyutilstest.cpp
   src/test/lcstest.cpp
@@ -1467,6 +1478,68 @@ if(WIN32)
   target_link_libraries(mixxx-lib PUBLIC FFTW::FFTW)
 endif()
 
+# Denon Engine Prime library export support (using libdjinterop)
+option(ENGINEPRIME "Support for library export to Denon Engine Prime" OFF)
+if(ENGINEPRIME)
+  target_compile_definitions(mixxx-lib PUBLIC __ENGINEPRIME__)
+
+  # Look for an existing installation of libdjinterop and use that if available.
+  # Otherwise, download and build from GitHub.
+  find_package(DjInterop)
+  if(DjInterop_FOUND)
+    # An existing installation of djinterop is available.
+    message(STATUS "Linking dynamically to existing installation of libdjinterop")
+    target_include_directories(mixxx-lib PUBLIC ${DjInterop_INCLUDE_DIRS})
+    target_link_libraries(mixxx-lib PUBLIC DjInterop::DjInterop)
+  else()
+    # Fetch djinterop sources from GitHub and build them statically.
+
+    # On MacOS, Mixxx does not use system SQLite, so we will use libdjinterop's
+    # embedded SQLite in such a case.
+    if (APPLE)
+      message(STATUS "Building libdjinterop sources (with embedded SQLite) fetched from GitHub")
+      set(DJINTEROP_SYSTEM_SQLITE OFF)
+    else()
+      message(STATUS "Building libdjinterop sources (with system SQLite) fetched from GitHub")
+      set(DJINTEROP_SYSTEM_SQLITE ON)
+    endif()
+
+    set(DJINTEROP_INSTALL_DIR "${CMAKE_CURRENT_BINARY_DIR}/lib/libdjinterop-install")
+    set(DJINTEROP_LIBRARY "lib/${CMAKE_STATIC_LIBRARY_PREFIX}djinterop${CMAKE_STATIC_LIBRARY_SUFFIX}")
+    ExternalProject_Add(libdjinterop
+      GIT_REPOSITORY https://github.com/xsco/libdjinterop.git
+      GIT_TAG tags/0.14.3
+      GIT_SHALLOW TRUE
+      INSTALL_DIR ${DJINTEROP_INSTALL_DIR}
+      CMAKE_ARGS
+        -DBUILD_SHARED_LIBS=OFF
+        -DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON
+        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+        -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+        -DCMAKE_PREFIX_PATH:PATH=${CMAKE_PREFIX_PATH}
+        -DSYSTEM_SQLITE=${DJINTEROP_SYSTEM_SQLITE}
+      BUILD_BYPRODUCTS <INSTALL_DIR>/${DJINTEROP_LIBRARY}
+      EXCLUDE_FROM_ALL TRUE
+    )
+
+    # Assemble a library based on the external project.
+    add_library(mixxx-libdjinterop STATIC IMPORTED)
+    add_dependencies(mixxx-libdjinterop libdjinterop)
+    set(DJINTEROP_INCLUDE_DIR "${DJINTEROP_INSTALL_DIR}/include")
+    set(DJINTEROP_LIBRARY_PATH "${DJINTEROP_INSTALL_DIR}/${DJINTEROP_LIBRARY}")
+    set_target_properties(mixxx-libdjinterop PROPERTIES IMPORTED_LOCATION "${DJINTEROP_LIBRARY_PATH}")
+    target_include_directories(mixxx-lib PUBLIC ${DJINTEROP_INCLUDE_DIR})
+    target_link_libraries(mixxx-lib PUBLIC mixxx-libdjinterop)
+
+    # Since we have built libdjinterop from sources as a static library, its
+    # transitive dependencies are not automatically recognised.  libdjinterop
+    # depends on zlib and sqlite3.  Mixxx already has a dependency on sqlite3,
+    # but not zlib, so we explicitly add that here.
+    find_package(ZLIB 1.2.8 REQUIRED)
+    target_link_libraries(mixxx-lib PUBLIC ${ZLIB_LIBRARIES})
+  endif()
+endif()
+
 # Ebur128
 find_package(Ebur128)
 cmake_dependent_option(EBUR128_STATIC "Link libebur128 statically" OFF "Ebur128_FOUND" ON)
@@ -1659,6 +1732,7 @@ find_package(Qt5
     Gui
     Network
     OpenGL
+    Qml
     Script
     ScriptTools
     Sql
@@ -1674,6 +1748,7 @@ target_link_libraries(mixxx-lib PUBLIC
   Qt5::Gui
   Qt5::Network
   Qt5::OpenGL
+  Qt5::Qml
   Qt5::Script
   Qt5::ScriptTools
   Qt5::Sql
@@ -1783,16 +1858,6 @@ elseif(WIN32)
     )
   endif()
 endif()
-
-# QtScriptByteArray
-add_library(QtScriptByteArray STATIC EXCLUDE_FROM_ALL
-  lib/qtscript-bytearray/bytearrayclass.cpp
-  lib/qtscript-bytearray/bytearrayprototype.cpp
-)
-set_target_properties(QtScriptByteArray PROPERTIES AUTOMOC ON)
-target_link_libraries(QtScriptByteArray Qt5::Core)
-target_include_directories(mixxx-lib PUBLIC lib/qtscript-bytearray)
-target_link_libraries(mixxx-lib PUBLIC QtScriptByteArray)
 
 # Queen Mary DSP
 add_library(QueenMaryDsp STATIC EXCLUDE_FROM_ALL

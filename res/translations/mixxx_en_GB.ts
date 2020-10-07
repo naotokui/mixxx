@@ -13,7 +13,7 @@
     <message>
         <location filename="../../src/library/analysisfeature.cpp" line="56"/>
         <source>Analyze</source>
-        <translation>Analyse</translation>
+        <translation>Analiza</translation>
     </message>
 </context>
 <context>
@@ -21,12 +21,12 @@
     <message>
         <location filename="../../src/library/autodj/autodjfeature.cpp" line="73"/>
         <source>Crates</source>
-        <translation>Crates</translation>
+        <translation>Cesta</translation>
     </message>
     <message>
         <location filename="../../src/library/autodj/autodjfeature.cpp" line="97"/>
         <source>Remove Crate as Track Source</source>
-        <translation>Remove Crate as Track Source</translation>
+        <translation>Aggiunge Cesta come Fonte delle Tracce</translation>
     </message>
     <message>
         <location filename="../../src/library/autodj/autodjfeature.cpp" line="110"/>
@@ -88,12 +88,12 @@
     <message>
         <location filename="../../src/library/baseexternallibraryfeature.cpp" line="41"/>
         <source>Import Playlist</source>
-        <translation>Import Playlist</translation>
+        <translation>Importa Playlist</translation>
     </message>
     <message>
         <location filename="../../src/library/baseexternallibraryfeature.cpp" line="119"/>
         <source>Playlist Creation Failed</source>
-        <translation>Playlist Creation Failed</translation>
+        <translation>Creazione della Playlist Fallita</translation>
     </message>
     <message>
         <location filename="../../src/library/baseexternallibraryfeature.cpp" line="120"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="293"/>
         <source>New Playlist</source>
-        <translation>New Playlist</translation>
+        <translation>Nuova Playlist</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="64"/>
@@ -117,7 +117,7 @@
         <location filename="../../src/library/baseplaylistfeature.cpp" line="37"/>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="290"/>
         <source>Create New Playlist</source>
-        <translation>Create New Playlist</translation>
+        <translation>Creare Nuova Playlist</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="69"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="53"/>
         <source>Remove</source>
-        <translation>Remove</translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="43"/>
@@ -137,38 +137,38 @@
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="58"/>
         <source>Lock</source>
-        <translation>Lock</translation>
+        <translation>Blocca</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="48"/>
         <source>Duplicate</source>
-        <translation>Duplicate</translation>
+        <translation>Duplica</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="86"/>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="91"/>
         <source>Import Playlist</source>
-        <translation>Import Playlist</translation>
+        <translation>Importa Playlist</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="101"/>
         <source>Export Track Files</source>
-        <translation>Export Track Files</translation>
+        <translation>Esporta Track Files</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="80"/>
         <source>Analyze entire Playlist</source>
-        <translation>Analyse entire Playlist</translation>
+        <translation>Analiza intera Playlist</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="196"/>
         <source>Enter new name for playlist:</source>
-        <translation>Enter new name for playlist:</translation>
+        <translation>Digitare Nuovo Nome della Playlist:</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="237"/>
         <source>Duplicate Playlist</source>
-        <translation>Duplicate Playlist</translation>
+        <translation>Duplicare Playlist</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="238"/>
@@ -227,7 +227,7 @@
         <location filename="../../src/library/baseplaylistfeature.cpp" line="320"/>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="435"/>
         <source>Playlist Creation Failed</source>
-        <translation>Playlist Creation Failed</translation>
+        <translation>Creazione della Playlist Fallita</translation>
     </message>
     <message>
         <location filename="../../src/library/baseplaylistfeature.cpp" line="321"/>
@@ -277,12 +277,12 @@
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="128"/>
         <source>Album Artist</source>
-        <translation>Album Artist</translation>
+        <translation>Artista Album</translation>
     </message>
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="132"/>
         <source>Artist</source>
-        <translation>Artist</translation>
+        <translation>Artista</translation>
     </message>
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="136"/>
@@ -312,7 +312,7 @@
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="156"/>
         <source>Composer</source>
-        <translation>Composer</translation>
+        <translation>Compositore</translation>
     </message>
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="160"/>
@@ -327,17 +327,17 @@
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="168"/>
         <source>Duration</source>
-        <translation>Duration</translation>
+        <translation>Durata</translation>
     </message>
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="172"/>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="176"/>
         <source>Genre</source>
-        <translation>Genre</translation>
+        <translation>Genere</translation>
     </message>
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="180"/>
@@ -352,7 +352,7 @@
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="188"/>
         <source>Location</source>
-        <translation>Location</translation>
+        <translation>Località</translation>
     </message>
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="192"/>
@@ -382,7 +382,7 @@
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="212"/>
         <source>Title</source>
-        <translation>Title</translation>
+        <translation>Titolo</translation>
     </message>
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="216"/>
@@ -392,7 +392,7 @@
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="220"/>
         <source>Year</source>
-        <translation>Year</translation>
+        <translation>Anno</translation>
     </message>
 </context>
 <context>
@@ -549,12 +549,12 @@
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="31"/>
         <source>Artist</source>
-        <translation>Artist</translation>
+        <translation>Artista</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="32"/>
         <source>Title</source>
-        <translation>Title</translation>
+        <translation>Titolo</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="33"/>
@@ -569,17 +569,17 @@
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="35"/>
         <source>Year</source>
-        <translation>Year</translation>
+        <translation>Anno</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="36"/>
         <source>Genre</source>
-        <translation>Genre</translation>
+        <translation>Genere</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="37"/>
         <source>Composer</source>
-        <translation>Composer</translation>
+        <translation>Compositore</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="38"/>
@@ -589,7 +589,7 @@
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="39"/>
         <source>Duration</source>
-        <translation>Duration</translation>
+        <translation>Durata</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="40"/>
@@ -604,7 +604,7 @@
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="42"/>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="43"/>
@@ -619,12 +619,12 @@
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="45"/>
         <source>Location</source>
-        <translation>Location</translation>
+        <translation>Località</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="46"/>
         <source>Album Artist</source>
-        <translation>Album Artist</translation>
+        <translation>Artista Album</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="47"/>
@@ -742,7 +742,7 @@
     <message>
         <location filename="../../src/control/controlmodel.cpp" line="10"/>
         <source>Title</source>
-        <translation>Title</translation>
+        <translation>Titolo</translation>
     </message>
     <message>
         <location filename="../../src/control/controlmodel.cpp" line="11"/>
@@ -2856,7 +2856,7 @@
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="79"/>
         <source>Remove</source>
-        <translation>Remove</translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="63"/>
@@ -2873,7 +2873,7 @@
         <location filename="../../src/library/crate/cratefeature.cpp" line="84"/>
         <location filename="../../src/library/crate/cratefeature.cpp" line="353"/>
         <source>Lock</source>
-        <translation>Lock</translation>
+        <translation>Blocca</translation>
     </message>
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="118"/>
@@ -2883,12 +2883,12 @@
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="74"/>
         <source>Duplicate</source>
-        <translation>Duplicate</translation>
+        <translation>Duplica</translation>
     </message>
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="97"/>
         <source>Analyze entire Crate</source>
-        <translation>Analyse entire Crate</translation>
+        <translation>Analyze entire Crate</translation>
     </message>
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="90"/>
@@ -2904,7 +2904,7 @@
         <location filename="../../src/library/crate/cratefeature.cpp" line="160"/>
         <location filename="../../src/library/crate/cratefeature.cpp" line="168"/>
         <source>Crates</source>
-        <translation>Crates</translation>
+        <translation>Cesta</translation>
     </message>
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="103"/>
@@ -3095,7 +3095,7 @@
         <location filename="../../src/library/dlganalysis.ui" line="97"/>
         <location filename="../../src/library/dlganalysis.cpp" line="181"/>
         <source>Analyze</source>
-        <translation>Analyse</translation>
+        <translation>Analiza</translation>
     </message>
     <message>
         <location filename="../../src/library/dlganalysis.ui" line="55"/>
@@ -3395,17 +3395,17 @@ by analyzing the beats to discard outliers.</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="158"/>
         <source>Choose Analyzer</source>
-        <translation>Choose Analyser</translation>
+        <translation>Choose Analyzer</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="179"/>
         <source>Beat Analyzer:</source>
-        <translation>Beat Analyser:</translation>
+        <translation>Beat Analyzer:</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="103"/>
         <source>Analyzer Settings</source>
-        <translation>Analyser Settings</translation>
+        <translation>Analyzer Settings</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="114"/>
@@ -3417,7 +3417,7 @@ by analyzing the beats to discard outliers.</translation>
         <source>Converts beats detected by the analyzer into a fixed-tempo beatgrid. 
 Use this setting if your tracks have a constant tempo (e.g. most electronic music). 
 Often results in higher quality beatgrids, but will not do well on tracks that have tempo shifts.</source>
-        <translation>Converts beats detected by the analyser into a fixed-tempo beatgrid. 
+        <translation>Converts beats detected by the analyzer into a fixed-tempo beatgrid. 
 Use this setting if your tracks have a constant tempo (e.g. most electronic music). 
 Often results in higher quality beatgrids, but will not do well on tracks that have tempo shifts.</translation>
     </message>
@@ -3436,12 +3436,12 @@ Often results in higher quality beatgrids, but will not do well on tracks that h
         <source>e.g. from 3rd-party programs or Mixxx versions before 1.11.
 (Not checked: Analyze only, if no beats exist.)</source>
         <translation>e.g. from 3rd-party programs or Mixxx versions before 1.11.
-(Not checked: Analyse only, if no beats exist.)</translation>
+(Not checked: Analyze only, if no beats exist.)</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="148"/>
         <source>Re-analyze beats when settings change or beat detection data is outdated</source>
-        <translation>Re-analyse beats when settings change or beat detection data is outdated</translation>
+        <translation>Re-analyze beats when settings change or beat detection data is outdated</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="44"/>
@@ -4037,7 +4037,7 @@ Two source connections to the same server can&apos;t have the same mountpoint.</
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbroadcastdlg.ui" line="613"/>
         <source>Genre</source>
-        <translation>Genre</translation>
+        <translation>Genere</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbroadcastdlg.ui" line="447"/>
@@ -4078,7 +4078,7 @@ Two source connections to the same server can&apos;t have the same mountpoint.</
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbroadcastdlg.ui" line="679"/>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbroadcastdlg.ui" line="720"/>
@@ -4386,7 +4386,7 @@ Apply settings and continue?</translation>
         <location filename="../../src/controllers/dlgprefcontrollerdlg.ui" line="414"/>
         <location filename="../../src/controllers/dlgprefcontrollerdlg.ui" line="483"/>
         <source>Remove</source>
-        <translation>Remove</translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <location filename="../../src/controllers/dlgprefcontrollerdlg.ui" line="88"/>
@@ -5293,12 +5293,12 @@ and allows you to pitch adjust them for harmonic mixing.</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefkeydlg.ui" line="31"/>
         <source>Choose Analyzer</source>
-        <translation>Choose Analyser</translation>
+        <translation>Choose Analyzer</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefkeydlg.ui" line="52"/>
         <source>Key Analyzer:</source>
-        <translation>Key Analyser:</translation>
+        <translation>Key Analyzer:</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefkeydlg.ui" line="71"/>
@@ -5308,7 +5308,7 @@ and allows you to pitch adjust them for harmonic mixing.</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefkeydlg.ui" line="84"/>
         <source>Analyzer Settings</source>
-        <translation>Analyser Settings</translation>
+        <translation>Analyzer Settings</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefkeydlg.ui" line="90"/>
@@ -5318,7 +5318,7 @@ and allows you to pitch adjust them for harmonic mixing.</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefkeydlg.ui" line="97"/>
         <source>Re-analyze keys when settings change or 3rd-party keys are present</source>
-        <translation>Re-analyse keys when settings change or 3rd-party keys are present</translation>
+        <translation>Re-analyze keys when settings change or 3rd-party keys are present</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefkeydlg.ui" line="113"/>
@@ -5572,7 +5572,7 @@ and allows you to pitch adjust them for harmonic mixing.</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgpreflibrarydlg.ui" line="57"/>
         <source>Remove</source>
-        <translation>Remove</translation>
+        <translation>Rimuovi</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgpreflibrarydlg.ui" line="83"/>
@@ -5967,7 +5967,7 @@ and allows you to pitch adjust them for harmonic mixing.</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefrecorddlg.ui" line="289"/>
         <source>Title</source>
-        <translation>Title</translation>
+        <translation>Titolo</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefrecorddlg.ui" line="311"/>
@@ -5977,7 +5977,7 @@ and allows you to pitch adjust them for harmonic mixing.</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefrecorddlg.ui" line="333"/>
         <source>Album</source>
-        <translation>Album:</translation>
+        <translation>Album</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefrecorddlg.ui" line="233"/>
@@ -6120,14 +6120,14 @@ and allows you to pitch adjust them for harmonic mixing.</translation>
         <source>ReplayGain targets a reference loudness of -18 LUFS (Loudness Units relative to Full Scale). You may increase it if you find Mixxx is too quiet or reduce it if you find that your tracks are clipping. You may also want to decrease the volume of unanalyzed tracks if you find they are often louder than ReplayGained tracks. For podcasting a loudness of -16 LUFS is recommended.
 
 The loudness target is approximate and assumes track pregain and master output level are unchanged.</source>
-        <translation>ReplayGain targets a reference loudness of -18 LUFS (Loudness Units relative to Full Scale). You may increase it if you find Mixxx is too quiet or reduce it if you find that your tracks are clipping. You may also want to decrease the volume of unanalysed tracks if you find they are often louder than ReplayGained tracks. For podcasting a loudness of -16 LUFS is recommended.
+        <translation>ReplayGain targets a reference loudness of -18 LUFS (Loudness Units relative to Full Scale). You may increase it if you find Mixxx is too quiet or reduce it if you find that your tracks are clipping. You may also want to decrease the volume of unanalyzed tracks if you find they are often louder than ReplayGained tracks. For podcasting a loudness of -16 LUFS is recommended.
 
 The loudness target is approximate and assumes track pregain and master output level are unchanged.</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefreplaygaindlg.ui" line="284"/>
         <source>When an unanalyzed track is playing, Mixxx will avoid an abrupt volume change by not applying a newly calculated ReplayGain value.</source>
-        <translation>When an unanalysed track is playing, Mixxx will avoid an abrupt volume change by not applying a newly calculated ReplayGain value.</translation>
+        <translation>When an unanalyzed track is playing, Mixxx will avoid an abrupt volume change by not applying a newly calculated ReplayGain value.</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefreplaygaindlg.ui" line="214"/>
@@ -6993,24 +6993,24 @@ Select from different types of displays for the waveform, which differ primarily
         <location filename="../../src/library/dlgtagfetcher.ui" line="50"/>
         <location filename="../../src/library/dlgtagfetcher.ui" line="501"/>
         <source>Year</source>
-        <translation>Year</translation>
+        <translation>Anno</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtagfetcher.ui" line="70"/>
         <source>Title</source>
-        <translation>Title</translation>
+        <translation>Titolo</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtagfetcher.ui" line="75"/>
         <location filename="../../src/library/dlgtagfetcher.ui" line="511"/>
         <source>Artist</source>
-        <translation>Artist:</translation>
+        <translation>Artista</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtagfetcher.ui" line="55"/>
         <location filename="../../src/library/dlgtagfetcher.ui" line="516"/>
         <source>Album</source>
-        <translation>Album:</translation>
+        <translation>Album</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtagfetcher.ui" line="60"/>
@@ -7198,17 +7198,17 @@ Select from different types of displays for the waveform, which differ primarily
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="114"/>
         <source>Album Artist</source>
-        <translation>Album Artist</translation>
+        <translation>Artista Album</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="124"/>
         <source>Composer</source>
-        <translation>Composer</translation>
+        <translation>Compositore</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="161"/>
         <source>Title</source>
-        <translation>Title</translation>
+        <translation>Titolo</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="171"/>
@@ -7223,12 +7223,12 @@ Select from different types of displays for the waveform, which differ primarily
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="236"/>
         <source>Year</source>
-        <translation>Year</translation>
+        <translation>Anno</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="265"/>
         <source>Artist</source>
-        <translation>Artist</translation>
+        <translation>Artista</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="281"/>
@@ -7238,7 +7238,7 @@ Select from different types of displays for the waveform, which differ primarily
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="323"/>
         <source>Genre</source>
-        <translation>Genre</translation>
+        <translation>Genere</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="463"/>
@@ -7372,7 +7372,7 @@ Often results in higher quality beatgrids, but will not do well on tracks that h
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="812"/>
         <source>Hint: Use the Library Analyze view to run BPM detection.</source>
-        <translation>Hint: Use the Library Analyse view to run BPM detection.</translation>
+        <translation>Hint: Use the Library Analyze view to run BPM detection.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="933"/>
@@ -7440,7 +7440,7 @@ Often results in higher quality beatgrids, but will not do well on tracks that h
     <message>
         <location filename="../../src/preferences/effectsettingsmodel.cpp" line="106"/>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation>Tipo</translation>
     </message>
 </context>
 <context>
@@ -7775,7 +7775,7 @@ support.</translation>
     <message>
         <location filename="../../src/library/libraryfeature.cpp" line="37"/>
         <source>Import Playlist</source>
-        <translation>Import Playlist</translation>
+        <translation>Importa Playlist</translation>
     </message>
     <message>
         <location filename="../../src/library/libraryfeature.cpp" line="39"/>
@@ -8138,7 +8138,7 @@ Do you want to select an input device?</translation>
     <message>
         <location filename="../../src/library/parsercsv.cpp" line="43"/>
         <source>Location</source>
-        <translation>Location</translation>
+        <translation>Località</translation>
     </message>
     <message>
         <location filename="../../src/library/parsercsv.cpp" line="130"/>
@@ -8203,7 +8203,7 @@ Do you want to select an input device?</translation>
     <message>
         <location filename="../../src/library/playlistfeature.cpp" line="86"/>
         <source>Lock</source>
-        <translation>Lock</translation>
+        <translation>Blocca</translation>
     </message>
     <message>
         <location filename="../../src/library/playlistfeature.cpp" line="56"/>
@@ -8239,7 +8239,7 @@ Do you want to select an input device?</translation>
     <message>
         <location filename="../../src/library/playlistfeature.cpp" line="277"/>
         <source>Create New Playlist</source>
-        <translation>Create New Playlist</translation>
+        <translation>Creare Nuova Playlist</translation>
     </message>
 </context>
 <context>
@@ -8279,7 +8279,7 @@ Do you want to scan your library for cover files now?</translation>
     <message>
         <location filename="../../src/preferences/upgrade.cpp" line="452"/>
         <source>When you load tracks, Mixxx can re-analyze them and generate new, more accurate beatgrids. This will make automatic beatsync and looping more reliable.</source>
-        <translation>When you load tracks, Mixxx can re-analyse them and generate new, more accurate beatgrids. This will make automatic beatsync and looping more reliable.</translation>
+        <translation>When you load tracks, Mixxx can re-analyze them and generate new, more accurate beatgrids. This will make automatic beatsync and looping more reliable.</translation>
     </message>
     <message>
         <location filename="../../src/preferences/upgrade.cpp" line="456"/>
@@ -8289,7 +8289,7 @@ Do you want to scan your library for cover files now?</translation>
     <message>
         <location filename="../../src/preferences/upgrade.cpp" line="458"/>
         <source>If you do not want Mixxx to re-analyze your tracks, choose &quot;Keep Current Beatgrids&quot;. You can change this setting at any time from the &quot;Beat Detection&quot; section of the Preferences.</source>
-        <translation>If you do not want Mixxx to re-analyse your tracks, choose &quot;Keep Current Beatgrids&quot;. You can change this setting at any time from the &quot;Beat Detection&quot; section of the Preferences.</translation>
+        <translation>If you do not want Mixxx to re-analyze your tracks, choose &quot;Keep Current Beatgrids&quot;. You can change this setting at any time from the &quot;Beat Detection&quot; section of the Preferences.</translation>
     </message>
     <message>
         <location filename="../../src/preferences/upgrade.cpp" line="462"/>
@@ -8306,7 +8306,7 @@ Do you want to scan your library for cover files now?</translation>
     <name>QObject</name>
     <message>
         <location filename="../../src/controllers/midi/midiutils.cpp" line="6"/>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="187"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="161"/>
         <source>Invalid</source>
         <translation>Invalid</translation>
     </message>
@@ -8412,67 +8412,67 @@ Do you want to scan your library for cover files now?</translation>
         <translation>14-bit (MSB)</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="189"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="163"/>
         <source>Master</source>
         <translation>Master</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="191"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="165"/>
         <source>Booth</source>
         <translation>Booth</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="193"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="167"/>
         <source>Headphones</source>
         <translation>Headphones</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="197"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="171"/>
         <source>Left Bus</source>
         <translation>Left Bus</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="199"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="173"/>
         <source>Center Bus</source>
         <translation>Center Bus</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="201"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="175"/>
         <source>Right Bus</source>
         <translation>Right Bus</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="203"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="177"/>
         <source>Invalid Bus</source>
         <translation>Invalid Bus</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="206"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="180"/>
         <source>Deck</source>
         <translation>Deck</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="209"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="183"/>
         <source>Record/Broadcast</source>
         <translation>Record/Broadcast</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="211"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="185"/>
         <source>Vinyl Control</source>
         <translation>Vinyl Control</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="214"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="188"/>
         <source>Microphone</source>
         <translation>Microphone</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="217"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="191"/>
         <source>Auxiliary</source>
         <translation>Auxiliary</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="220"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="194"/>
         <source>Unknown path type %1</source>
         <translation>Unknown path type %1</translation>
     </message>
@@ -9882,7 +9882,7 @@ Fully right: end of the effect period</translation>
     <message>
         <location filename="../../src/library/setlogfeature.cpp" line="112"/>
         <source>Lock</source>
-        <translation>Lock</translation>
+        <translation>Blocca</translation>
     </message>
     <message>
         <location filename="../../src/library/setlogfeature.cpp" line="377"/>
@@ -10131,7 +10131,7 @@ Fully right: end of the effect period</translation>
     <message>
         <location filename="../../src/util/statmodel.cpp" line="11"/>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation>Tipo</translation>
     </message>
     <message>
         <location filename="../../src/util/statmodel.cpp" line="12"/>
@@ -13133,20 +13133,20 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</t
         <translation>Passthrough</translation>
     </message>
     <message>
-        <location filename="../../src/widget/woverview.cpp" line="711"/>
+        <location filename="../../src/widget/woverview.cpp" line="705"/>
         <source>Ready to play, analyzing ..</source>
         <extracomment>Text on waveform overview when file is playable but no waveform is visible</extracomment>
-        <translation>Ready to play, analysing ..</translation>
+        <translation>Ready to play, analyzing ..</translation>
     </message>
     <message>
-        <location filename="../../src/widget/woverview.cpp" line="714"/>
-        <location filename="../../src/widget/woverview.cpp" line="724"/>
+        <location filename="../../src/widget/woverview.cpp" line="708"/>
+        <location filename="../../src/widget/woverview.cpp" line="718"/>
         <source>Loading track ..</source>
         <extracomment>Text on waveform overview when file is cached from source</extracomment>
         <translation>Loading track ..</translation>
     </message>
     <message>
-        <location filename="../../src/widget/woverview.cpp" line="718"/>
+        <location filename="../../src/widget/woverview.cpp" line="712"/>
         <source>Finalizing ..</source>
         <extracomment>Text on waveform overview during finalizing of waveform analysis</extracomment>
         <translation>Finalizing ..</translation>

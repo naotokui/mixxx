@@ -292,7 +292,7 @@
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="140"/>
         <source>BPM</source>
-        <translation>RZM</translation>
+        <translation>ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/library/basetracktablemodel.cpp" line="144"/>
@@ -594,7 +594,7 @@
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="40"/>
         <source>BPM</source>
-        <translation>RZM</translation>
+        <translation>ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/library/browse/browsetablemodel.cpp" line="41"/>
@@ -940,32 +940,32 @@
         <location filename="../../src/controllers/controlpickermenu.cpp" line="76"/>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="77"/>
         <source>BPM</source>
-        <translation>RZM</translation>
+        <translation>ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="78"/>
         <source>Increase BPM by 1</source>
-        <translation>Zvýšit RZM o 1</translation>
+        <translation>Zvýšit ÚZM o 1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="79"/>
         <source>Decrease BPM by 1</source>
-        <translation>Snížit RZM o 1</translation>
+        <translation>Snížit ÚZM o 1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="80"/>
         <source>Increase BPM by 0.1</source>
-        <translation>Zvýšit RZM o 0,1</translation>
+        <translation>Zvýšit ÚZM o 0,1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="81"/>
         <source>Decrease BPM by 0.1</source>
-        <translation>Snížit RZM o 0,1</translation>
+        <translation>Snížit ÚZM o 0,1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="82"/>
         <source>BPM tap button</source>
-        <translation>Tlačítko pro klepání RZM</translation>
+        <translation>Tlačítko pro klepání ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="91"/>
@@ -975,22 +975,22 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="101"/>
         <source>Increase internal master BPM by 1</source>
-        <translation>Zvýšit vnitřní hlavní RZM o 1</translation>
+        <translation>Zvýšit vnitřní hlavní ÚZM o 1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="104"/>
         <source>Decrease internal master BPM by 1</source>
-        <translation>Snížit vnitřní hlavní RZM o 1</translation>
+        <translation>Snížit vnitřní hlavní ÚZM o 1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="107"/>
         <source>Increase internal master BPM by 0.1</source>
-        <translation>Zvýšit vnitřní hlavní RZM o 0,1</translation>
+        <translation>Zvýšit vnitřní hlavní ÚZM o 0,1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="109"/>
         <source>Decrease internal master BPM by 0.1</source>
-        <translation>Snížit vnitřní hlavní RZM o 0,1</translation>
+        <translation>Snížit vnitřní hlavní ÚZM o 0,1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="110"/>
@@ -1025,7 +1025,7 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="184"/>
         <source>Vinyl Control</source>
-        <translation>Ovládání vinylem</translation>
+        <translation>Vinyl</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="190"/>
@@ -1136,7 +1136,7 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="263"/>
         <source>Looping</source>
-        <translation>Smyčkování</translation>
+        <translation>Opakování ve smyčce</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="271"/>
@@ -1437,27 +1437,27 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="78"/>
         <source>BPM +1</source>
-        <translation>RZM +1</translation>
+        <translation>ÚZM +1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="79"/>
         <source>BPM -1</source>
-        <translation>RZM -1</translation>
+        <translation>ÚZM -1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="80"/>
         <source>BPM +0.1</source>
-        <translation>RZM +0,1</translation>
+        <translation>ÚZM +0,1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="81"/>
         <source>BPM -0.1</source>
-        <translation>RZM -0,1</translation>
+        <translation>ÚZM -0,1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="82"/>
         <source>BPM Tap</source>
-        <translation>Klepání tempa (rázů za minutu)</translation>
+        <translation>Klepání tempa</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="83"/>
@@ -1467,7 +1467,7 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="83"/>
         <source>Increase track&apos;s average BPM by 0.01</source>
-        <translation>Zvýšit průměrný počet RZM skladby o 0,01</translation>
+        <translation>Zvýšit průměrný počet ÚZM skladby o 0,01</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="84"/>
@@ -1477,7 +1477,7 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="84"/>
         <source>Decrease track&apos;s average BPM by 0.01</source>
-        <translation>Snížit průměrný počet RZM skladby o 0,01</translation>
+        <translation>Snížit průměrný počet ÚZM skladby o 0,01</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="85"/>
@@ -1549,27 +1549,27 @@
         <location filename="../../src/controllers/controlpickermenu.cpp" line="98"/>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="99"/>
         <source>Internal Master BPM</source>
-        <translation>Vnitřní hlavní RZM</translation>
+        <translation>Vnitřní hlavní ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="100"/>
         <source>Internal Master BPM +1</source>
-        <translation>Vnitřní hlavní RZM +1</translation>
+        <translation>Vnitřní hlavní ÚZM +1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="103"/>
         <source>Internal Master BPM -1</source>
-        <translation>Vnitřní hlavní RZM -1</translation>
+        <translation>Vnitřní hlavní ÚZM -1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="106"/>
         <source>Internal Master BPM +0.1</source>
-        <translation>Vnitřní hlavní RZM +0,1</translation>
+        <translation>Vnitřní hlavní ÚZM +0,1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="108"/>
         <source>Internal Master BPM -0.1</source>
-        <translation>Vnitřní hlavní RZM -0,1</translation>
+        <translation>Vnitřní hlavní ÚZM -0,1</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="110"/>
@@ -2533,32 +2533,32 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="612"/>
         <source>Meta Knob</source>
-        <translation>Metaknoflík</translation>
+        <translation>Otočné řízení</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="612"/>
         <source>Effect Meta Knob (control linked effect parameters)</source>
-        <translation>Metaknoflík efektu (řízení parametrů propojených efektů)</translation>
+        <translation>Otočné řízení efektu (ovládání parametrů propojených efektů)</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="655"/>
         <source>Meta Knob Mode</source>
-        <translation>Režim metaknoflíku</translation>
+        <translation>Režim otočného řízení</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="656"/>
         <source>Set how linked effect parameters change when turning the Meta Knob.</source>
-        <translation>Nastavit, jak se parametry propojených efektů budou měnit, když se otáčí metaknoflíkem.</translation>
+        <translation>Nastavit, jak se parametry propojených efektů budou měnit, když se otáčí otočným řízením.</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="660"/>
         <source>Meta Knob Mode Invert</source>
-        <translation>Obrácení režimu metaknoflíku</translation>
+        <translation>Obrácení režimu otočného řízení</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="661"/>
         <source>Invert how linked effect parameters change when turning the Meta Knob.</source>
-        <translation>Obrátit, jak se parametry propojených efektů budou měnit, když se otáčí metaknoflíkem.</translation>
+        <translation>Obrátit, jak se parametry propojených efektů budou měnit, když se otáčí otočným řízením.</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="671"/>
@@ -3336,7 +3336,7 @@ automaticky ukáže rytmickou mřížku a dovolí vám seřízení skladeb pomoc
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="24"/>
         <source>Enable BPM and Beat Detection</source>
-        <translation>Povolit rázy za minutu (RZM) a rozpoznávání rytmu</translation>
+        <translation>Povolit ÚZM a rozpoznávání rytmu</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="198"/>
@@ -3418,7 +3418,7 @@ Použijte toto nastavení, pokud mají vaše skladby stálé tempo (např. vět�
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="44"/>
         <source>BPM Range</source>
-        <translation>Rozsah RZM</translation>
+        <translation>Rozsah ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbeatsdlg.ui" line="50"/>
@@ -4545,12 +4545,12 @@ Použít nastavení a pokračovat?</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefinterfacedlg.ui" line="316"/>
         <source>Keep metaknob position</source>
-        <translation>Zachovat polohu meta-regulátoru</translation>
+        <translation>Zachovat polohu otočného řízení</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefinterfacedlg.ui" line="326"/>
         <source>Reset metaknob to effect default</source>
-        <translation>Vrátit meta-regulátor na výchozí hodnotu efektu</translation>
+        <translation>Vrátit otočné řízení na výchozí hodnotu efektu</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefinterfacedlg.ui" line="286"/>
@@ -7117,7 +7117,7 @@ Vyberte z různých druhů zobrazení průběhových křivek, které se v prvé 
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="440"/>
         <source>BPM:</source>
-        <translation>RZM:</translation>
+        <translation>ÚZM:</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="549"/>
@@ -7137,27 +7137,27 @@ Vyberte z různých druhů zobrazení průběhových křivek, které se v prvé 
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="628"/>
         <source>BPM</source>
-        <translation>RZM</translation>
+        <translation>ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="730"/>
         <source>Sets the BPM to 75% of the current value.</source>
-        <translation>Nastaví rázy za minutu (RZM) na 75 % nynější hodnoty.</translation>
+        <translation>Nastaví ÚZM na 75 % nynější hodnoty.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="733"/>
         <source>3/4 BPM</source>
-        <translation>3/4 RZM</translation>
+        <translation>3/4</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="698"/>
         <source>Sets the BPM to 50% of the current value.</source>
-        <translation>Nastaví rázy za minutu (RZM) na 50 % nynější hodnoty.</translation>
+        <translation>Nastaví ÚZM na 50 % nynější hodnoty.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="645"/>
         <source>Displays the BPM of the selected track.</source>
-        <translation>Zobrazí rázy za minutu (RZM) vybrané skladby.</translation>
+        <translation>Zobrazí ÚZM vybrané skladby.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="85"/>
@@ -7217,22 +7217,22 @@ Vyberte z různých druhů zobrazení průběhových křivek, které se v prvé 
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="682"/>
         <source>Sets the BPM to 200% of the current value.</source>
-        <translation>Nastaví rázy za minutu (RZM) na 200 % nynější hodnoty.</translation>
+        <translation>Nastaví ÚZM na 200 % nynější hodnoty.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="685"/>
         <source>Double BPM</source>
-        <translation>Zdvojit RZM</translation>
+        <translation>Zdvojit</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="701"/>
         <source>Halve BPM</source>
-        <translation>Snížit RZM na polovinu</translation>
+        <translation>Snížit na polovinu</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="805"/>
         <source>Clear BPM and Beatgrid</source>
-        <translation>Smazat RZM a rytmickou mřížku</translation>
+        <translation>Smazat ÚZM a rytmickou mřížku</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="850"/>
@@ -7284,7 +7284,7 @@ Vyberte z různých druhů zobrazení průběhových křivek, které se v prvé 
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="638"/>
         <source>Track BPM: </source>
-        <translation>RZM skladby: </translation>
+        <translation>ÚZM skladby: </translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="661"/>
@@ -7303,37 +7303,37 @@ Použijte toto nastavení, pokud mají vaše skladby stálé tempo (např. vět�
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="714"/>
         <source>Sets the BPM to 66% of the current value.</source>
-        <translation>Nastaví rázy za minutu (RZM) na 66 % nynější hodnoty.</translation>
+        <translation>Nastaví ÚZM na 66 % nynější hodnoty.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="717"/>
         <source>2/3 BPM</source>
-        <translation>2/3 RZM</translation>
+        <translation>2/3</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="746"/>
         <source>Sets the BPM to 150% of the current value.</source>
-        <translation>Nastaví rázy za minutu (RZM) na 150 % nynější hodnoty.</translation>
+        <translation>Nastaví ÚZM na 150 % nynější hodnoty.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="749"/>
         <source>3/2 BPM</source>
-        <translation>3/2 RZM</translation>
+        <translation>3/2 ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="762"/>
         <source>Sets the BPM to 133% of the current value.</source>
-        <translation>Nastaví rázy za minutu (RZM) na 133 % nynější hodnoty.</translation>
+        <translation>Nastaví ÚZM na 133 % nynější hodnoty.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="765"/>
         <source>4/3 BPM</source>
-        <translation>4/3 RZM</translation>
+        <translation>4/3 ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="784"/>
         <source>Tap with the beat to set the BPM to the speed you are tapping.</source>
-        <translation>Klepejte (ťukejte) do taktu (rytmus) pro nastavení rázů (úderů) za minutu (RZM - „M.M.“: Mälzelův metronom) na rychlost, kterou ťukáte.</translation>
+        <translation>Klepejte (ťukejte) do taktu pro nastavení počtu úderů za minutu na rychlost, kterou ťukáte.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="787"/>
@@ -7343,7 +7343,7 @@ Použijte toto nastavení, pokud mají vaše skladby stálé tempo (např. vět�
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="812"/>
         <source>Hint: Use the Library Analyze view to run BPM detection.</source>
-        <translation>Rada: Rozbor knihovny použijte ke zjištění počtu úderů za minutu - rázů za minutu (RZM - „M.M.“: Mälzelův metronom).</translation>
+        <translation>Rada: Rozbor knihovny použijte ke zjištění počtu úderů za minutu.</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackinfo.ui" line="933"/>
@@ -8272,7 +8272,7 @@ Chcete nyní kvůli souborům s obaly prohledat knihovnu?</translation>
     <name>QObject</name>
     <message>
         <location filename="../../src/controllers/midi/midiutils.cpp" line="6"/>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="187"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="161"/>
         <source>Invalid</source>
         <translation>Neplatný</translation>
     </message>
@@ -8378,67 +8378,67 @@ Chcete nyní kvůli souborům s obaly prohledat knihovnu?</translation>
         <translation>14-bit (MSB)</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="189"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="163"/>
         <source>Master</source>
         <translation>Hlavní</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="191"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="165"/>
         <source>Booth</source>
         <translation>Kukaň</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="193"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="167"/>
         <source>Headphones</source>
         <translation>Sluchátka</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="197"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="171"/>
         <source>Left Bus</source>
         <translation>Levá sběrnice</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="199"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="173"/>
         <source>Center Bus</source>
         <translation>Střední sběrnice</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="201"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="175"/>
         <source>Right Bus</source>
         <translation>Pravá sběrnice</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="203"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="177"/>
         <source>Invalid Bus</source>
         <translation>Neplatná sběrnice</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="206"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="180"/>
         <source>Deck</source>
         <translation>Přehrávač</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="209"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="183"/>
         <source>Record/Broadcast</source>
         <translation>Nahrávat/Vysílat</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="211"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="185"/>
         <source>Vinyl Control</source>
-        <translation>Ovládání vinylem</translation>
+        <translation>Vinyl</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="214"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="188"/>
         <source>Microphone</source>
         <translation>Mikrofon</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="217"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="191"/>
         <source>Auxiliary</source>
         <translation>Pomocný (Aux)</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="220"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="194"/>
         <source>Unknown path type %1</source>
         <translation>Neznámý typ cesty %1</translation>
     </message>
@@ -8773,7 +8773,7 @@ Se šířkou na nule může být celá oblast zpoždění pokryta ručně.</tran
     <message>
         <location filename="../../src/effects/builtin/metronomeeffect.cpp" line="30"/>
         <source>BPM</source>
-        <translation>RZM</translation>
+        <translation>ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/effects/builtin/metronomeeffect.cpp" line="31"/>
@@ -8788,7 +8788,7 @@ Se šířkou na nule může být celá oblast zpoždění pokryta ručně.</tran
     <message>
         <location filename="../../src/effects/builtin/metronomeeffect.cpp" line="44"/>
         <source>Synchronizes the BPM with the track if it can be retrieved</source>
-        <translation>Seřídí údery za minutu/rázy za minutu (RZM - „M.M.“: Mälzelův metronom) se stopou, pokud lze údaj získat</translation>
+        <translation>Seřídí údery za minutu se stopou, pokud lze údaj získat</translation>
     </message>
     <message>
         <location filename="../../src/effects/builtin/autopaneffect.cpp" line="31"/>
@@ -10435,7 +10435,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="233"/>
         <source>Vinyl Control</source>
-        <translation>Ovládání vinylem</translation>
+        <translation>Vinyl</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="234"/>
@@ -10716,7 +10716,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="354"/>
         <source>Displays the tempo of the loaded track in BPM (beats per minute).</source>
-        <translation>Ukáže tempo nahrané skladby v počtu úderů za minutu - rázů za minutu (RZM - „M.M.“: Mälzelův metronom).</translation>
+        <translation>Ukáže tempo nahrané skladby v počtu úderů za minutu.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="356"/>
@@ -10737,27 +10737,27 @@ Fully right: end of the effect period</source>
         <location filename="../../src/skin/tooltips.cpp" line="366"/>
         <location filename="../../src/skin/tooltips.cpp" line="397"/>
         <source>When tapped repeatedly, adjusts the BPM to match the tapped BPM.</source>
-        <translation>Když je poklepáno opakovaně, upraví počet úderů za minutu - rázů za minutu (RZM - „M.M.“: Mälzelův metronom), aby odpovídal vyklepanému (zaťukanému) počtu úderů za minutu.</translation>
+        <translation>Když je poklepáno opakovaně, upraví počet úderů za minutu, aby odpovídal vyklepanému (zaťukanému) počtu úderů za minutu.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="369"/>
         <source>Adjust BPM Down</source>
-        <translation>Snížit počet RZM</translation>
+        <translation>Snížit počet ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="370"/>
         <source>When tapped, adjusts the average BPM down by a small amount.</source>
-        <translation>Když je poklepáno, zmenší lehce průměrný počet úderů za minutu - rázů za minutu (RZM - „M.M.“: Mälzelův metronom).</translation>
+        <translation>Když je poklepáno, zmenší lehce průměrný počet úderů za minutu.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="373"/>
         <source>Adjust BPM Up</source>
-        <translation>Zvýšit počet RZM</translation>
+        <translation>Zvýšit počet ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="374"/>
         <source>When tapped, adjusts the average BPM up by a small amount.</source>
-        <translation>Když je poklepáno, zvýší lehce průměrný počet úderů za minutu - rázů za minutu (RZM - „M.M.“: Mälzelův metronom).</translation>
+        <translation>Když je poklepáno, zvýší lehce průměrný počet úderů za minutu.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="377"/>
@@ -10782,7 +10782,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="395"/>
         <source>Tempo and BPM Tap</source>
-        <translation>Klepání tempa a RZM</translation>
+        <translation>Klepání tempa a ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="401"/>
@@ -10872,7 +10872,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="620"/>
         <source>Hot Cue - Track will seek to nearest previous hotcue point.</source>
-        <translation>Rychlá značka - Skladba bude hledat k nejbližšímu bodu předchozí rychlé značky</translation>
+        <translation>Rychlá značka - Skladba bude hledat k nejbližšímu bodu předchozí rychlé značky.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="625"/>
@@ -11178,17 +11178,17 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="929"/>
         <source>Meta Knob Link</source>
-        <translation>Spojení metaknoflíku</translation>
+        <translation>Spojení otočného řízení</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="930"/>
         <source>Set how this parameter is linked to the effect&apos;s Meta Knob.</source>
-        <translation>Nastavit, jak je tento parametr spojen s metaknoflíkem efektu.</translation>
+        <translation>Nastavit, jak je tento parametr spojen s otočným řízením efektu.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="938"/>
         <source>Meta Knob Link Inversion</source>
-        <translation>Obrácení spojení metaknoflíku</translation>
+        <translation>Obrácení spojení otočného řízení</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="939"/>
@@ -11366,7 +11366,7 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="913"/>
         <source>Meta Knob</source>
-        <translation>Metaknoflík</translation>
+        <translation>Otočné řízení</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="914"/>
@@ -11416,7 +11416,7 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="933"/>
         <source>Left side active: parameter moves with left half of Meta Knob turn</source>
-        <translation>Levá strana činná: parametr se pohybuje po polovině otočení otočného řízení vlevo</translation>
+        <translation>Levá strana činná: parametr se pohybuje pomocí levé poloviny otočení otočného řízení.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="935"/>
@@ -11537,12 +11537,12 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="500"/>
         <source>Syncs the tempo (BPM) and phase to that of the other track, if BPM is detected on both.</source>
-        <translation>Seřídí tempo (RZM - údery/rázy za minutu - „M.M.“: Mälzelův metronom) a fázi s jiným přehrávačem, pokud je hodnota RZM rozpoznána u obou.</translation>
+        <translation>Seřídí tempo (ÚZM) a fázi s jiným přehrávačem, pokud je hodnota ÚZM rozpoznána u obou.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="502"/>
         <source>Syncs the tempo (BPM) to that of the other track, if BPM is detected on both.</source>
-        <translation>Seřídí tempo (RZM - údery/rázy za minutu - „M.M.“: Mälzelův metronom) s tempem skladby jiného přehrávače, pokud je hodnota RZM rozpoznána u obou.</translation>
+        <translation>Seřídí tempo (ÚZM) s tempem skladby jiného přehrávače, pokud je hodnota ÚZM rozpoznána u obou.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="518"/>
@@ -11833,12 +11833,12 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="504"/>
         <source>Syncs to the first deck (in numerical order) that is playing a track and has a BPM.</source>
-        <translation>Seřídí s prvním přehrávačem (v číselném pořadí), který přehrává nějakou skladbu a má RZM.</translation>
+        <translation>Seřídí s prvním přehrávačem (v číselném pořadí), který přehrává nějakou skladbu a má ÚZM.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="505"/>
         <source>If no deck is playing, syncs to the first deck that has a BPM.</source>
-        <translation>Pokud nepřehrává žádný přehrávač, seřídí s prvním přehrávačem, který má RZM.</translation>
+        <translation>Pokud nepřehrává žádný přehrávač, seřídí s prvním přehrávačem, který má ÚZM.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="506"/>
@@ -13078,20 +13078,20 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
         <translation>Propustit skrz</translation>
     </message>
     <message>
-        <location filename="../../src/widget/woverview.cpp" line="711"/>
+        <location filename="../../src/widget/woverview.cpp" line="705"/>
         <source>Ready to play, analyzing ..</source>
         <extracomment>Text on waveform overview when file is playable but no waveform is visible</extracomment>
         <translation>Připraven k přehrávání, provádí se rozbor...</translation>
     </message>
     <message>
-        <location filename="../../src/widget/woverview.cpp" line="714"/>
-        <location filename="../../src/widget/woverview.cpp" line="724"/>
+        <location filename="../../src/widget/woverview.cpp" line="708"/>
+        <location filename="../../src/widget/woverview.cpp" line="718"/>
         <source>Loading track ..</source>
         <extracomment>Text on waveform overview when file is cached from source</extracomment>
         <translation>Nahrává se skladba...</translation>
     </message>
     <message>
-        <location filename="../../src/widget/woverview.cpp" line="718"/>
+        <location filename="../../src/widget/woverview.cpp" line="712"/>
         <source>Finalizing ..</source>
         <extracomment>Text on waveform overview during finalizing of waveform analysis</extracomment>
         <translation>Dokončuje se...</translation>
@@ -13141,7 +13141,7 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/widget/wsearchlineedit.cpp" line="192"/>
         <source>Use operators like bpm:115-128, artist:BooFar, -year:1990</source>
-        <translation>Použít operátory jako je RZM:115-128, artist:BooFar, -year:1990</translation>
+        <translation>Použít operátory jako je ÚZM:115-128, artist:BooFar, -year:1990</translation>
     </message>
     <message>
         <location filename="../../src/widget/wsearchlineedit.cpp" line="193"/>
@@ -13319,7 +13319,7 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="217"/>
         <source>BPM and Beatgrid</source>
-        <translation>RZM a rytmická mřížka</translation>
+        <translation>ÚZM a rytmická mřížka</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="220"/>
@@ -13374,42 +13374,42 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="252"/>
         <source>Lock BPM</source>
-        <translation>Zamknout RZM</translation>
+        <translation>Zamknout</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="253"/>
         <source>Unlock BPM</source>
-        <translation>Odemknout RZM</translation>
+        <translation>Odemknout ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="258"/>
         <source>Double BPM</source>
-        <translation>Zdvojit RZM</translation>
+        <translation>Zdvojit</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="259"/>
         <source>Halve BPM</source>
-        <translation>Snížit RZM na polovinu</translation>
+        <translation>Snížit na polovinu</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="260"/>
         <source>2/3 BPM</source>
-        <translation>2/3 RZM</translation>
+        <translation>2/3</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="261"/>
         <source>3/4 BPM</source>
-        <translation>3/4 RZM</translation>
+        <translation>3/4</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="262"/>
         <source>4/3 BPM</source>
-        <translation>4/3 RZM</translation>
+        <translation>4/3 ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="263"/>
         <source>3/2 BPM</source>
-        <translation>3/2 RZM</translation>
+        <translation>3/2 ÚZM</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="284"/>
@@ -13515,7 +13515,7 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/library/dlgtrackmetadataexport.cpp" line="15"/>
         <source>Export Modified Track Metadata</source>
-        <translation>Uložit změněná popisná data skladby</translation>
+        <translation>Vyvedení změněných popisných dat skladby</translation>
     </message>
     <message>
         <location filename="../../src/library/dlgtrackmetadataexport.cpp" line="16"/>

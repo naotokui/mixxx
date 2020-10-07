@@ -83,7 +83,7 @@
     <message>
         <location filename="../../src/library/baseexternallibraryfeature.cpp" line="35"/>
         <source>Add to Auto DJ Queue (replace)</source>
-        <translation>Aggiunge a Auto DJ (sostituisce)</translation>
+        <translation>Aggiungi a Auto DJ (sostituisci)</translation>
     </message>
     <message>
         <location filename="../../src/library/baseexternallibraryfeature.cpp" line="41"/>
@@ -879,7 +879,7 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="64"/>
         <source>Jump to end of track</source>
-        <translation>Salta a fine traccis</translation>
+        <translation>Salta a fine traccia</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="57"/>
@@ -1487,7 +1487,7 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="85"/>
         <source>Adjust the beatgrid to the left</source>
-        <translation>Regola beatgrid a sinistra</translation>
+        <translation>Regola beatgrid alla sinistra</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="86"/>
@@ -1614,7 +1614,7 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="129"/>
         <source>Adjust pitch from speed slider pitch</source>
-        <translation>Regola il pitch dal pitch dello speed slider</translation>
+        <translation>Regola il passo dal passo dello speed slider</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="130"/>
@@ -2653,12 +2653,12 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="759"/>
         <source>Preview Deck Show/Hide</source>
-        <translation>Anteprima Deck Mostra/Nasconde</translation>
+        <translation>Anteprima Deck Mostra/Nascondi</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="760"/>
         <source>Show/hide the preview deck</source>
-        <translation>Mostra/nasconde l&apos;anteprima deck</translation>
+        <translation>Mostra/nasconde anteprima deck</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="771"/>
@@ -2673,12 +2673,12 @@
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="780"/>
         <source>Waveform zoom</source>
-        <translation>Zoom forma d&apos;onda</translation>
+        <translation>Ingrandisce forma d&apos;onda</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="780"/>
         <source>Waveform Zoom</source>
-        <translation>Zoom Forma d&apos;onda</translation>
+        <translation>Ingrandisce forma d&apos;onda</translation>
     </message>
     <message>
         <location filename="../../src/controllers/controlpickermenu.cpp" line="781"/>
@@ -2952,7 +2952,7 @@
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="169"/>
         <source>Crates are a great way to help organize the music you want to DJ with.</source>
-        <translation>Le ceste sono di grande aiuto per organizzare la musica DJ che vuoi.</translation>
+        <translation>Le ceste sono di grande aiuto per organizzare la musica che vuoi.</translation>
     </message>
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="170"/>
@@ -2962,7 +2962,7 @@
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="171"/>
         <source>Crates let you organize your music however you&apos;d like!</source>
-        <translation>Le ceste ti consentono di organizzare la tua musica a tuo piacimento!</translation>
+        <translation>Le Ceste ti consentono di organizzare la tua musica a tuo piacimento!</translation>
     </message>
     <message>
         <location filename="../../src/library/crate/cratefeature.cpp" line="420"/>
@@ -2985,7 +2985,7 @@
     <message>
         <location filename="../../src/library/crate/cratefeaturehelper.cpp" line="43"/>
         <source>Create New Crate</source>
-        <translation>Crea Nuova Cesta</translation>
+        <translation>Crea una Nuova Cesta</translation>
     </message>
     <message>
         <location filename="../../src/library/crate/cratefeaturehelper.cpp" line="44"/>
@@ -3211,7 +3211,7 @@ Scorciatoia: Shift+F10</translation>
         <source>Shuffle the content of the Auto DJ queue
 
 Shortcut: Shift+F9</source>
-        <translation>Mescola il contenuto della coda di Auto DJ
+        <translation>Sfuma il contenuto della coda di Auto DJ
 
 Scorciatoia: Shift+F9</translation>
     </message>
@@ -3243,7 +3243,7 @@ Scorciatoia: Shift+F9</translation>
     <message>
         <location filename="../../src/library/autodj/dlgautodj.cpp" line="167"/>
         <source>Full Track</source>
-        <translation>Traccia Intera</translation>
+        <translation>Traccia Piena</translation>
     </message>
     <message>
         <location filename="../../src/library/autodj/dlgautodj.cpp" line="169"/>
@@ -3276,7 +3276,7 @@ Begin crossfading from the selected number of seconds before the
 last sound.</source>
         <translation>Auto DJ Modi Dissolvenza
 
-Intera Intro + Outro:
+Piena Intro + Outro:
 Suona l&apos;intera intro e outro. Usa la lunghezza intro o outro
 come tempo di dissolvenza, preferendo il più corto. Se intro 
 o outro non sono definiti, usa il tempo di transizione selezionato.
@@ -3287,7 +3287,7 @@ intro, taglia la fine dell&apos;outro. Usa la lunghezza dell&apos;intro o outro
 come tempo di transizione, preferendo il più corto. Se intro 
 o outro non sono definiti, usa il tempo di transizione selezionato.
 
-Traccia Intera:
+Traccia Piena:
 Suona l&apos;intera traccia. Inizia la transizione del numero selezionato 
 di secondi prima della fine della traccia. Un tempo negativo di 
 transizione aggiunge silenzio fra le tracce.
@@ -3833,7 +3833,7 @@ You tried to learn: %1,%2</source>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbroadcast.cpp" line="128"/>
         <source>Automatic</source>
-        <translation>Automatica</translation>
+        <translation>Automatico</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbroadcast.cpp" line="130"/>
@@ -3903,7 +3903,7 @@ Two source connections to the same server can&apos;t have the same mountpoint.</
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbroadcast.cpp" line="582"/>
         <source>Can&apos;t rename &apos;%1&apos; to &apos;%2&apos;: name already in use</source>
-        <translation>Non posso rinominare &apos;%1&apos; come &apos;%2&apos;: il nome è già in uso</translation>
+        <translation>Non posso rinomanre &apos;%1&apos; come &apos;%2&apos;: il nome è già in uso</translation>
     </message>
 </context>
 <context>
@@ -3966,7 +3966,7 @@ Two source connections to the same server can&apos;t have the same mountpoint.</
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbroadcastdlg.ui" line="124"/>
         <source>Turn on Live Broadcasting when applying these settings</source>
-        <translation>Attiva il live Broadcasting all&apos;applicazione di queste impostazioni</translation>
+        <translation>Attiva il live Broadcasting all&apos;applicazione di queste impostazioni.</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefbroadcastdlg.ui" line="137"/>
@@ -5483,7 +5483,7 @@ e permette la regolazione del loro pitch per un mixing armonico.</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgpreflibrary.cpp" line="229"/>
         <source>Confirm Directory Removal</source>
-        <translation>Conferma Rimozione Cartella</translation>
+        <translation>Confirma Rimozione Cartella</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgpreflibrary.cpp" line="231"/>
@@ -5991,7 +5991,7 @@ e permette la regolazione del loro pitch per un mixing armonico.</translation>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefrecorddlg.ui" line="261"/>
         <source>Split recordings at</source>
-        <translation>Taglia registrazione a</translation>
+        <translation>Divide registrazione a</translation>
     </message>
 </context>
 <context>
@@ -6412,22 +6412,22 @@ The loudness target is approximate and assumes track pregain and master output l
     <message>
         <location filename="../../src/preferences/dialog/dlgprefvinyldlg.ui" line="38"/>
         <source>Deck 1 Vinyl Type</source>
-        <translation>Tipo Vinile Deck 1</translation>
+        <translation>Tipo Vinile Piatto 1</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefvinyldlg.ui" line="177"/>
         <source>Deck 2 Vinyl Type</source>
-        <translation>Tipo Vinile Deck 2</translation>
+        <translation>Tipo Vinile Piatto 2</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefvinyldlg.ui" line="316"/>
         <source>Deck 3 Vinyl Type</source>
-        <translation>Tipo Vinile Deck 3</translation>
+        <translation>Tipo Vinile Piatto 3</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefvinyldlg.ui" line="455"/>
         <source>Deck 4 Vinyl Type</source>
-        <translation>Tipo Vinile Deck 4</translation>
+        <translation>Tipo Vinile Piatto 4</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefvinyldlg.ui" line="582"/>
@@ -6653,7 +6653,7 @@ Select from different types of displays for the waveform, which differ primarily
     <message>
         <location filename="../../src/preferences/dialog/dlgprefwaveformdlg.ui" line="322"/>
         <source>Waveform overview type</source>
-        <translation>Tipo di panoramica della forma d&apos;onda</translation>
+        <translation>Tipo panoramica della forma d&apos;onda</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefwaveformdlg.ui" line="383"/>
@@ -6688,7 +6688,7 @@ Select from different types of displays for the waveform, which differ primarily
     <message>
         <location filename="../../src/preferences/dialog/dlgprefwaveformdlg.ui" line="468"/>
         <source>Generate waveforms when analyzing library</source>
-        <translation>Genera forme d&apos;onda quando analizza la libreria</translation>
+        <translation>Genera le forme d&apos;onda quando analizza la libreria</translation>
     </message>
     <message>
         <location filename="../../src/preferences/dialog/dlgprefwaveformdlg.ui" line="483"/>
@@ -8258,7 +8258,7 @@ Do you want to scan your library for cover files now?</source>
     <name>QObject</name>
     <message>
         <location filename="../../src/controllers/midi/midiutils.cpp" line="6"/>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="187"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="161"/>
         <source>Invalid</source>
         <translation type="unfinished"/>
     </message>
@@ -8364,67 +8364,67 @@ Do you want to scan your library for cover files now?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="189"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="163"/>
         <source>Master</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="191"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="165"/>
         <source>Booth</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="193"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="167"/>
         <source>Headphones</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="197"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="171"/>
         <source>Left Bus</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="199"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="173"/>
         <source>Center Bus</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="201"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="175"/>
         <source>Right Bus</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="203"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="177"/>
         <source>Invalid Bus</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="206"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="180"/>
         <source>Deck</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="209"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="183"/>
         <source>Record/Broadcast</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="211"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="185"/>
         <source>Vinyl Control</source>
         <translation>Controllo Vinile</translation>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="214"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="188"/>
         <source>Microphone</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="217"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="191"/>
         <source>Auxiliary</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/soundio/soundmanagerutil.cpp" line="220"/>
+        <location filename="../../src/soundio/soundmanagerutil.cpp" line="194"/>
         <source>Unknown path type %1</source>
         <translation type="unfinished"/>
     </message>
@@ -9278,12 +9278,12 @@ Higher values result in less attenuation of high frequencies.</source>
     <message>
         <location filename="../../src/effects/builtin/balanceeffect.cpp" line="23"/>
         <source>Adjust the left/right balance and stereo width</source>
-        <translation>Regola il bilanciamento sinistra/destra e l&apos;ampiezza stereo</translation>
+        <translation>Regola il bilanciamento sinistro/destro e l&apos;ampiezza stereo</translation>
     </message>
     <message>
         <location filename="../../src/effects/builtin/balanceeffect.cpp" line="31"/>
         <source>Adjust balance between left and right channels</source>
-        <translation>Regola bilanciamento canali sinistra e destra</translation>
+        <translation>Regola bilanciamento canali sinistro e destro</translation>
     </message>
     <message>
         <location filename="../../src/effects/builtin/balanceeffect.cpp" line="43"/>
@@ -9320,7 +9320,7 @@ Centro: non modifica il segnale originale.</translation>
     <message>
         <location filename="../../src/effects/builtin/balanceeffect.cpp" line="62"/>
         <source>Frequencies below this cutoff are not adjusted in the stereo field</source>
-        <translation>Frequenze sotto il taglio basso non sono regolate nel campo stereo</translation>
+        <translation>Frequenze al di sotto del taglio basso non sono regolate nel campo stereo</translation>
     </message>
     <message>
         <location filename="../../src/effects/builtin/parametriceqeffect.cpp" line="19"/>
@@ -9428,7 +9428,7 @@ a higher Q affects a narrower band of frequencies.</source>
         <location filename="../../src/effects/builtin/tremoloeffect.cpp" line="41"/>
         <location filename="../../src/effects/builtin/tremoloeffect.cpp" line="42"/>
         <source>Rate</source>
-        <translation type="unfinished"/>
+        <translation>Voto</translation>
     </message>
     <message>
         <location filename="../../src/effects/builtin/tremoloeffect.cpp" line="43"/>
@@ -9623,7 +9623,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/recording/recordingmanager.cpp" line="297"/>
         <source>Ensure there is enough free disk space and you have write permission for the Recordings folder.</source>
-        <translation>Assicurati ci sia sufficiente spazio disco libero sufficiente e di avere i permessi in scrittura per la cartella di Registazione.</translation>
+        <translation>Assicurati ci sia spazio sufficiente sul disco e di avere i permessi in scrittura per la cartella di Registazione.</translation>
     </message>
     <message>
         <location filename="../../src/recording/recordingmanager.cpp" line="298"/>
@@ -10426,7 +10426,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="239"/>
         <source>Show/hide the Preview deck.</source>
-        <translation>Mostra/nasconde l&apos;Anteprima deck.</translation>
+        <translation>Mostra/nasconde l&apos;Anteprima deck</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="242"/>
@@ -10437,7 +10437,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="243"/>
         <source>Show/hide Cover Art.</source>
-        <translation>Mostra/nasconde Copertina.</translation>
+        <translation>Mostra/nasconde copertina.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="246"/>
@@ -10487,7 +10487,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="267"/>
         <source>Adjusts the microphone volume.</source>
-        <translation>Regola il volume del microfono</translation>
+        <translation>Regola il volume del microfono.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="271"/>
@@ -10557,7 +10557,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="295"/>
         <source>Auto: Sets how much to reduce the music volume when microphones are in use.</source>
-        <translation>Auto: Imposta quanto ridurre il volume della musica quando vengono usati i microfoni.</translation>
+        <translation>Auto: Imposta di quanto ridurre il volume della musica quando vengono usati i microfoni.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="296"/>
@@ -11062,7 +11062,7 @@ Fully right: end of the effect period</source>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="816"/>
         <source>Adjust the mixing of the dry (input) signal with the wet (output) signal of the effect unit</source>
-        <translation>Regola il mixaggio del segnale dry (in entrata) con il wet (in uscita) dell&apos;unità effetto</translation>
+        <translation>Regola il mixaggio del segnale in entrata dry (in entrata) con il wet (in uscita) dell&apos;unità effetto</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="817"/>
@@ -11548,7 +11548,7 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="600"/>
         <source>When enabled, the track responds to external vinyl control.</source>
-        <translation>Quando abilitato la traccia risponde al controllo vinile esterno.</translation>
+        <translation>Quando abilitato la traccia risponde al controllo esterno vinile.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="594"/>
@@ -12278,7 +12278,7 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="712"/>
         <source>Information is loaded from the track&apos;s metadata tags.</source>
-        <translation>L&apos;informatione è caricata dai tag metadati della traccia.</translation>
+        <translation>L&apos;information è caricata dai tag metadati della traccia.</translation>
     </message>
     <message>
         <location filename="../../src/skin/tooltips.cpp" line="714"/>
@@ -12636,7 +12636,7 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/widget/wmainmenubar.cpp" line="66"/>
         <source>Load Track to Deck &amp;%1</source>
-        <translation>Carica Traccia su Deck &amp;%1</translation>
+        <translation>Carica Traccia su Piatto &amp;%1</translation>
     </message>
     <message>
         <location filename="../../src/widget/wmainmenubar.cpp" line="67"/>
@@ -13054,20 +13054,20 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/widget/woverview.cpp" line="711"/>
+        <location filename="../../src/widget/woverview.cpp" line="705"/>
         <source>Ready to play, analyzing ..</source>
         <extracomment>Text on waveform overview when file is playable but no waveform is visible</extracomment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/widget/woverview.cpp" line="714"/>
-        <location filename="../../src/widget/woverview.cpp" line="724"/>
+        <location filename="../../src/widget/woverview.cpp" line="708"/>
+        <location filename="../../src/widget/woverview.cpp" line="718"/>
         <source>Loading track ..</source>
         <extracomment>Text on waveform overview when file is cached from source</extracomment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/widget/woverview.cpp" line="718"/>
+        <location filename="../../src/widget/woverview.cpp" line="712"/>
         <source>Finalizing ..</source>
         <extracomment>Text on waveform overview during finalizing of waveform analysis</extracomment>
         <translation type="unfinished"/>
@@ -13204,7 +13204,7 @@ Use this to change only the effected (wet) signal with EQ and filter effects.</s
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="122"/>
         <source>Adjust BPM</source>
-        <translation>Regolazione BPM</translation>
+        <translation>Regola BPM</translation>
     </message>
     <message>
         <location filename="../../src/widget/wtrackmenu.cpp" line="127"/>
